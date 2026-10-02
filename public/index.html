@@ -10,8 +10,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<style>
+/* Mysterious splash — instant paint, zero dependencies */
+#myst-splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 120% at 50% 0%,#0f3d3e 0%,#0a2b2c 55%,#071e1f 100%);color:#f3ead9;font-family:Georgia,'Times New Roman',serif;transition:opacity .6s ease;padding:20px;box-sizing:border-box;overflow-y:auto}
+#myst-splash.myst-hide{opacity:0;pointer-events:none}
+.myst-box{max-width:440px;width:100%;text-align:center;margin:auto}
+.myst-logo{font-size:44px;margin-bottom:6px}
+.myst-name{letter-spacing:.45em;font-size:13px;color:#e8b04b;text-transform:uppercase;margin-bottom:14px;text-indent:.45em}
+.myst-hook{font-size:21px;line-height:1.45;margin:0 0 18px}
+.myst-card{background:rgba(255,255,255,.06);border:1px solid rgba(232,176,75,.35);border-radius:16px;padding:18px}
+.myst-q{font-size:16px;margin:0 0 12px;line-height:1.4}
+.myst-opts{display:flex;flex-direction:column;gap:8px}
+.myst-opt{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#f3ead9;border-radius:10px;padding:10px 12px;font-size:15px;cursor:pointer;font-family:inherit;transition:background .2s,border-color .2s}
+.myst-opt:hover:not(:disabled){background:rgba(232,176,75,.18);border-color:#e8b04b}
+.myst-opt:disabled{cursor:default;opacity:.9}
+.myst-opt.right{background:rgba(46,125,50,.45);border-color:#7bc47f}
+.myst-opt.wrong{background:rgba(183,28,28,.4);border-color:#e57373}
+.myst-fact{display:none;margin:12px 0 0;font-size:14px;line-height:1.5;color:#ffe9c4}
+.myst-fact.show{display:block}
+.myst-spin{margin-top:16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55)}
+.myst-spin::after{content:'…';animation:mystDots 1.2s steps(4) infinite}
+@keyframes mystDots{0%{content:'·'}33%{content:'··'}66%{content:'···'}}
+</style>
 </head>
 <body>
+<div id="myst-splash">
+  <div class="myst-box">
+    <div class="myst-logo">🧠</div>
+    <div class="myst-name">Mysterious</div>
+    <p class="myst-hook">Your brain makes 35,000 decisions a day.<br>Make one right now 👇</p>
+    <div class="myst-card">
+      <p class="myst-q" id="myst-q"></p>
+      <div class="myst-opts" id="myst-opts"></div>
+      <p class="myst-fact" id="myst-fact"></p>
+    </div>
+    <div class="myst-spin">Preparing your universe</div>
+  </div>
+</div>
 <header id="zehen-nav"></header>
 
 <main>
@@ -107,5 +142,42 @@
 <footer id="zehen-footer"></footer>
 <script src="js/nav.js"></script>
 <script src="js/home.js"></script>
+<script>
+/* Mysterious splash quiz — keeps the wait fun while the universe wakes up */
+(function(){
+  var splash=document.getElementById('myst-splash');
+  if(!splash)return;
+  var QUIZ=[
+    {q:"Which colour actually helps your brain focus?",opts:["Blue","Red","Neon pink"],a:0,f:"Studies link blue tones with calm, steady focus."},
+    {q:"You start believing something just because you heard it twice. Psychologists call this\u2026",opts:["D\u00e9j\u00e0 vu","The illusory truth effect","Placebo"],a:1,f:"Repetition feels like truth \u2014 your brain loves shortcuts."},
+    {q:"How fast do humans form a first impression?",opts:["7 seconds","7 minutes","7 hours"],a:0,f:"Your brain judges in seconds. Make them count."},
+    {q:"Smiling \u2014 even a fake one \u2014 can lift your mood. This is\u2026",opts:["The facial feedback hypothesis","The fake-it theory","Mood mirror"],a:0,f:"Your face talks to your brain. Smile wisely \uD83D\uDE09"}
+  ];
+  var item=QUIZ[Math.floor(Math.random()*QUIZ.length)];
+  var qEl=document.getElementById('myst-q'),oEl=document.getElementById('myst-opts'),fEl=document.getElementById('myst-fact');
+  qEl.textContent=item.q;
+  item.opts.forEach(function(t,i){
+    var b=document.createElement('button');
+    b.className='myst-opt';b.type='button';b.textContent=t;
+    b.onclick=function(){
+      var kids=oEl.children,k;
+      for(k=0;k<kids.length;k++)kids[k].disabled=true;
+      if(i===item.a){b.classList.add('right');fEl.textContent="\u2728 Correct! "+item.f;}
+      else{b.classList.add('wrong');kids[item.a].classList.add('right');fEl.textContent="Not quite \u2014 it\u2019s "+item.opts[item.a]+"! "+item.f;}
+      fEl.classList.add('show');
+    };
+    oEl.appendChild(b);
+  });
+  var done=false;
+  function hide(){if(done)return;done=true;splash.classList.add('myst-hide');setTimeout(function(){if(splash.parentNode)splash.parentNode.removeChild(splash);},700);}
+  function check(){
+    fetch('/api/health',{cache:'no-store'}).then(function(r){
+      if(r.ok){setTimeout(hide,700);}else{setTimeout(check,900);}
+    }).catch(function(){setTimeout(check,900);});
+  }
+  if(document.readyState==='complete'){check();}else{window.addEventListener('load',check);}
+  setTimeout(hide,30000);
+})();
+</script>
 </body>
 </html>
