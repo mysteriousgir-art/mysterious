@@ -4,77 +4,93 @@ A warm, beautiful, full-stack psychology learning + community website. Notes lib
 
 **Owner:** Attiya Batool (Founder & Admin)
 
-## Tech stack
+## Tech stack (Vercel edition)
 
-- **Backend:** Node.js + Express + better-sqlite3 + Socket.io (one single service)
+- **Backend:** Vercel Serverless Functions (`api/**`, Node 24) — no always-on server
+- **Database:** Supabase Postgres (free tier, Singapore region)
 - **Frontend:** Multi-page app in `public/` — hand-crafted CSS + vanilla JS (no build step)
 - **Auth:** email + password (bcrypt, 12 rounds), httpOnly cookie sessions (`mysterious_session`)
-- **Safety:** rate-limited auth/chat endpoints, HTML-escaping + profanity filter, `is_admin` checked server-side on every admin request
+- **Chat:** REST polling (`GET /api/chat/messages` every 3s) — no websockets needed
+- **Safety:** HTML-escaping + profanity filter, `is_admin` checked server-side on every admin request
 
 ## Project layout
 
 ```
 ~/workspace/zehen/
-├── server.js            # Express + Socket.io app (API, chat, admin)
-├── db/
-│   ├── schema.sql       # SQLite schema (13 tables)
-│   └── seed.js          # idempotent seeder (rooms, notes, quizzes)
+├── api/                 # serverless functions (one file per endpoint)
+│   ├── _lib/util.js     # supabase client, auth, validators, chat helpers
+│   ├── auth/            # signup, login, logout, me
+│   ├── chat/            # rooms, conversations, messages (poll), send
+│   ├── admin/           # stats, users, ban/unban, notes & quizzes CRUD, reports, backup
+│   └── ...              # notes, quizzes, checkin, games, leaderboard, profile, blocks
+├── supabase/
+│   └── schema.sql       # Postgres DDL + seed data (paste into Supabase SQL Editor)
 ├── data/
 │   ├── notes.json       # 10 psychology notes (points + everyday examples)
 │   ├── quizzes.json     # 5 MCQ quizzes (44 questions, explanations)
 │   └── infographics.json# gallery manifest
 ├── public/              # frontend (10 pages, css/, js/, img/infographics/)
+├── test/
+│   └── harness.js       # node test/harness.js — unit + live-API tests
+├── vercel.json          # static + functions routing config
 ├── package.json         # name: "mysterious"
-├── .env.example         # copy to .env and fill in
+├── .env.example         # env var template (copy values into Vercel, never commit)
 └── README.md
 ```
 
-## Run locally
+## One-time setup: Supabase
 
-```bash
-cd ~/workspace/zehen
-cp .env.example .env
-# Edit .env: set a long random SESSION_SECRET and your ADMIN_EMAIL
-npm install
-node db/seed.js        # seeds notes/quizzes/rooms (safe to re-run)
-npm start              # → http://localhost:3000
-```
+1. Supabase dashboard → your `mysterious` project → **SQL Editor** → New query.
+2. Paste the **entire** `supabase/schema.sql` file → **Run**.
+3. Verify: `SELECT count(*) FROM notes;` → 10, `SELECT count(*) FROM quizzes;` → 5, `SELECT count(*) FROM rooms;` → 3.
+
+## Deploy free: Vercel
+
+1. Push the `vercel-rework` branch to GitHub.
+2. Vercel → Add New → Project → import the repo → select branch **`vercel-rework`**.
+3. Environment variables (Project → Settings → Environment Variables):
+   - `SUPABASE_URL` = your project URL (`https://….supabase.co`)
+   - `SUPABASE_SECRET_KEY` = the **secret** key (`sb_secret_…`) — server-side only
+   - `ADMIN_EMAIL` = your own email address (the owner's)
+   - `SESSION_SECRET` = any long random string
+4. Deploy. Open the URL and **sign up with your `ADMIN_EMAIL`** → you become admin.
 
 ## The admin account (important)
 
 There is **exactly one way** to become admin, and no API, button, or page can grant it:
 
-1. Set `ADMIN_EMAIL` in `.env` to **your own email address** (the owner's).
+1. Set `ADMIN_EMAIL` in Vercel env vars to **your own email address** (the owner's).
 2. Sign up on the site with that exact email.
-3. On signup/login the server marks that account `is_admin = 1`.
+3. On signup/login the API marks that account `is_admin = 1`.
 
-Every `/api/admin/*` endpoint re-reads `is_admin` from the database and returns **403** for anyone else. Never share your admin login, and never set `ADMIN_EMAIL` to an address you don't control.
+Every `/api/admin/*` function re-reads `is_admin` from the database and returns **403** for anyone else. Never share your admin login, and never set `ADMIN_EMAIL` to an address you don't control.
 
-## Deploy free (one service)
+## Custom domain (your own branded URL)
 
-**Render (recommended):**
-1. Push this folder to a GitHub repo.
-2. Render → New → Web Service → connect the repo.
-3. Build command: `npm install` · Start command: `npm start`.
-4. Environment: `NODE_VERSION=24`, `SESSION_SECRET=<long random string>`, `ADMIN_EMAIL=<your email>`.
-5. Add a **persistent disk** mounted at `/opt/render/project/src/data` (this is where `zehen.db` lives — without a disk, the database is wiped on every deploy/restart).
-6. Deploy, open the URL, sign up with your `ADMIN_EMAIL` → you're admin.
+1. Buy a domain from any registrar.
+2. Vercel → your project → Settings → Domains → add the domain. Vercel shows the DNS records.
+3. Add those records at your registrar. Vercel provisions free HTTPS automatically.
 
-**Railway:** same idea — new service from repo, add a Volume mounted at the `data/` path, set the same env vars.
+## Data & backups
 
-## Custom domain (your own branded URL, not AI-generated)
+- All data lives in **Supabase Postgres** — it survives redeploys (unlike server-local SQLite).
+- Free Supabase projects **pause after 7 days of zero activity**; any real visit wakes them. Keep the site visited at least weekly.
+- **Backup:** the admin panel has a "Download database backup" button → exports every table as JSON (password hashes are never included).
 
-1. Buy a domain (e.g. `mysteriouslearn.com`) from any registrar (Namecheap, Cloudflare, GoDaddy…).
-2. In Render: Service → Settings → Custom Domains → add your domain. Render shows you the DNS records to create.
-3. In your registrar's DNS: add the records Render gives you (usually a CNAME for `www` and an A/ALIAS for the root).
-4. Wait for DNS to propagate (minutes to a few hours), Render provisions free HTTPS automatically.
+## Run the tests
 
-## Data persistence notes
+```bash
+cd ~/workspace/zehen
+# .env.supabase must exist (SUPABASE_URL + SUPABASE_SECRET_KEY) — schema.sql must be loaded first
+node test/harness.js
+```
 
-- The app uses **SQLite** (`data/zehen.db`) — simple, free, and plenty for a community site. On hosts with ephemeral filesystems (Render/Railway free tiers) you **must** attach a persistent disk/volume or the database resets on redeploy.
-- **Optional Postgres path:** if you outgrow SQLite, swap `better-sqlite3` for `pg` + a small query wrapper, move the schema to Postgres dialect, and point `DATABASE_URL` at a free Postgres (Supabase, Neon, Render Postgres). The API layer is the only place that touches SQL.
-- Backups: download `data/zehen.db` periodically from your host's disk/volume panel.
+The harness runs pure-logic unit tests always, then (only if the Supabase schema exists) full live-API tests: signup/login/sessions, notes, quizzes + grading, streaks, XP, chat send/poll/DM, block/report, admin guards (403 for non-admins), and the JSON backup — cleaning up its test rows afterwards.
 
 ## Features checklist
 
-- Auth & profiles (avatar picker, bio, country), notes library (search + categories), 8 HD infographics, daily streaks + XP/levels + daily tasks, 5 quizzes with instant scoring & explanations, memory-match + guess-the-theorist games + leaderboard, Socket.io study rooms & 1:1 chat, blocking, user reports, profanity filter, admin dashboard (users, DAU, signups chart, top countries, popular content, user ban, content CRUD, report review).
+- Auth & profiles (avatar picker, bio, country), notes library (search + categories), 8 HD infographics, daily streaks + XP/levels + daily tasks, 5 quizzes with instant scoring & explanations, memory-match + guess-the-theorist games + leaderboard, study rooms & 1:1 chat (polling), blocking, user reports, profanity filter, admin dashboard (users, DAU, signups chart, top countries, popular content, user ban, content CRUD, report review, JSON backup).
+
+## Notes on the old version
+
+The original `main` branch runs Express + SQLite + Socket.io on one server (see git history). The `vercel-rework` branch is a full port: same UI, same API shapes, same rules — new transport (serverless + Postgres + polling chat).

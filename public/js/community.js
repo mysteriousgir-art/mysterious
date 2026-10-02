@@ -1,13 +1,18 @@
-/* Mysterious community — study rooms + DMs over socket.io */
+/* Mysterious community — study rooms + DMs over REST polling (3s).
+   Replaces the old socket.io transport; UI and behaviour are unchanged. */
 (function(){
 "use strict";
 
-var socket = null;
 var me = null;
 var view = null;            // {type:'room'|'dm', id, name, avatar}
 var rooms = [];
 var convs = [];
 var blocks = [];
+var pollTimer = null;
+var lastId = 0;
+var renderedIds = null;     // Set of message ids already in the DOM
+var pendingTemp = null;     // {body, el} optimistic echo awaiting server echo
+var tempCounter = 0;
 
 function gate(){
   var g = document.getElementById("chat-gate");
@@ -23,17 +28,6 @@ function gate(){
 }
 
 function connect(){
-  if(socket) return;
-  if(typeof io === "undefined"){
-    document.getElementById("chat-body").innerHTML =
-      '<div class="empty-chat">⚠️ Could not load the chat connection. Please refresh the page.</div>';
-    return;
-  }
-  socket = io();
-  socket.on("history", function(msgs){ renderHistory(msgs || []); });
-  socket.on("message", function(m){ appendMsg(m); scrollBottom(); });
-  socket.on("error", function(e){ toast((e && e.message) || "Chat error", "err"); });
-  socket.on("connect_error", function(){ toast("Chat connection lost — retrying…", "err"); });
   loadSidebar();
   // deep link: community.html?dm=<id>
   var dmId = qp("dm");
@@ -162,11 +156,67 @@ function setHead(title, sub, isDM){
   if(rp) rp.addEventListener("click", reportCurrent);
 }
 
-function join(){
+/* ---------- polling transport ---------- */
+
+function historyUrl(since){
+  var u = "/api/chat/messages?type=" + encodeURIComponent(view.type) +
+    "&id=" + encodeURIComponent(view.id);
+  if(since > 0) u += "&since=" + encodeURIComponent(since);
+  return u;
+}
+
+function stopPoll(){
+  if(pollTimer){ clearInterval(pollTimer); pollTimer = null; }
+  pendingTemp = null;
+}
+
+async function join(){
+  stopPoll();
+  lastId = 0;
+  renderedIds = new Set();
   document.getElementById("chat-body").innerHTML = '<div class="loading-box"><span class="spinner"></span> Joining…</div>';
   document.getElementById("chat-input-row").style.display = "";
   renderRooms(); renderConvs();
-  socket.emit("join", {type: view.type, id: view.id});
+  try{
+    var d = await api(historyUrl(0));
+    renderHistory((d && d.messages) || []);
+  }catch(e){
+    if(e.status === 403){
+      document.getElementById("chat-body").innerHTML = '<div class="empty-chat">You can\'t view this conversation.</div>';
+      document.getElementById("chat-input-row").style.display = "none";
+    }else if(e.status === 401){
+      window.location.href = "auth.html?next=" + encodeURIComponent("community.html");
+      return;
+    }else{
+      document.getElementById("chat-body").innerHTML = '<div class="empty-chat">⚠️ Could not load messages. Please refresh.</div>';
+      toast(e.message, "err");
+    }
+    return;
+  }
+  pollTimer = setInterval(pollOnce, 3000);
+}
+
+async function pollOnce(){
+  if(!view) return;
+  try{
+    var d = await api(historyUrl(lastId));
+    var msgs = (d && d.messages) || [];
+    msgs.forEach(function(m){
+      // drop the optimistic echo once the real message arrives
+      if(pendingTemp && m.fromId === me.id && m.body === pendingTemp.body){
+        if(pendingTemp.el && pendingTemp.el.parentNode) pendingTemp.el.parentNode.removeChild(pendingTemp.el);
+        pendingTemp = null;
+      }
+      appendMsg(m);
+    });
+    if(msgs.length) scrollBottom();
+  }catch(e){
+    if(e.status === 401){
+      stopPoll();
+      window.location.href = "auth.html?next=" + encodeURIComponent("community.html");
+    }
+    // transient poll errors are silent; the next tick retries
+  }
 }
 
 function renderHistory(msgs){
@@ -182,17 +232,22 @@ function renderHistory(msgs){
 
 function appendMsg(m){
   if(!m) return;
+  if(m.id && renderedIds && renderedIds.has(m.id)) return; // dedupe
+  if(m.id && renderedIds) renderedIds.add(m.id);
+  if(m.id && m.id > lastId) lastId = m.id;
   var body = document.getElementById("chat-body");
   var empty = body.querySelector(".empty-chat");
   if(empty) empty.remove();
   var mine = me && String(m.fromId) === String(me.id);
   var d = document.createElement("div");
   d.className = "msg" + (mine ? " mine" : "");
+  if(!m.id) d.setAttribute("data-temp", "1");
   var when = m.at ? new Date(m.at).toLocaleString() : "";
   d.innerHTML = '<span class="who">' + esc(mine ? "You" : (m.fromName || "Someone")) + "</span>" +
     '<span class="text">' + esc(m.body) + "</span>" +
     (when ? '<span class="at">' + esc(when) + "</span>" : "");
   body.appendChild(d);
+  return d;
 }
 
 function scrollBottom(){
@@ -200,15 +255,25 @@ function scrollBottom(){
   body.scrollTop = body.scrollHeight;
 }
 
-function send(){
+async function send(){
   var inp = document.getElementById("chat-input");
   var body = inp.value.trim();
-  if(!body || !view || !socket) return;
+  if(!body || !view) return;
   inp.value = "";
-  socket.emit("message", {type: view.type, id: view.id, body: body});
   // optimistic echo
-  appendMsg({fromId: me.id, fromName: me.displayName, body: body, at: new Date().toISOString()});
+  var tempEl = appendMsg({fromId: me.id, fromName: me.displayName, body: body, at: new Date().toISOString()});
+  pendingTemp = { body: body, el: tempEl };
   scrollBottom();
+  try{
+    await api("/api/chat/send", {method:"POST", body:{type: view.type, id: view.id, body: body}});
+    pollOnce(); // pick up the real message quickly
+  }catch(e){
+    // roll back the optimistic echo on failure
+    if(tempEl && tempEl.parentNode) tempEl.parentNode.removeChild(tempEl);
+    pendingTemp = null;
+    inp.value = body;
+    toast(e.message, "err");
+  }
 }
 
 /* ---------- block / report ---------- */
@@ -222,6 +287,7 @@ async function blockCurrent(){
     renderBlocks();
     convs = convs.filter(function(c){ return String(c.userId) !== String(view.id); });
     renderConvs();
+    stopPoll();
     view = null;
     document.getElementById("chat-body").innerHTML = '<div class="empty-chat">User blocked. Pick another room or conversation. 🌿</div>';
     document.getElementById("chat-input-row").style.display = "none";
