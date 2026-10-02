@@ -1,6 +1,6 @@
 // POST /api/chat/send  {type:'room'|'dm', id, body}  (auth required)
 // Polling replacement for socket.io "message". Same validation as before.
-const u = require('../_lib/util');
+const u = require('./../_lib/util');
 
 // Best-effort per-instance rate limit: ~20 messages per rolling minute per user
 // (serverless instances don't share memory, so this is approximate).

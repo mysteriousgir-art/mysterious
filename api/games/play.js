@@ -1,5 +1,5 @@
 // POST /api/games/play  (auth required; +5 XP)
-const u = require('../_lib/util');
+const u = require('./../_lib/util');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return u.methodNotAllowed(res, ['POST']);

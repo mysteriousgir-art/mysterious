@@ -134,6 +134,11 @@ async function dbTests() {
     cookies.b = r.cookie; createdIds.push(r.data.user.id);
     const bId = r.data.user.id;
 
+    r = await doSignup(mkUser('c'));
+    ok('user C signup 201', r.res.statusCode === 201);
+    cookies.c = r.cookie; createdIds.push(r.data.user.id);
+    global.__cId = r.data.user.id;
+
     r = await doSignup(mkUser('b')); // same email? no — mkUser uses tag; use explicit dup:
     const dup = mockRes();
     await signup(mockReq({ method: 'POST', body: { email: adminInfo.email, password: 'x', displayName: 'Dup', country: '' } }), dup);
@@ -316,7 +321,7 @@ async function dbTests() {
     const blocks = H('blocks.js'), unblock = H('blocks/[userId].js'), reports = H('reports.js');
     const stats = H('admin/stats.js'), users = H('admin/users.js'), backup = H('admin/backup.js');
     const msgs = H('chat/messages.js'), send = H('chat/send.js');
-    const bId = global.__bId, aId = createdIds[0];
+    const bId = global.__bId, aId = createdIds[0], cId = global.__cId;
 
     let res = mockRes();
     await stats(mockReq({ method: 'GET', query: {}, cookie: cookies.b }), res);
@@ -327,11 +332,15 @@ async function dbTests() {
     ok('non-admin backup 403', res.statusCode === 403);
 
     res = mockRes();
-    await blocks(mockReq({ method: 'POST', body: { userId: aId }, cookie: cookies.b }), res);
-    ok('B blocks A 201', res.statusCode === 201);
+    await blocks(mockReq({ method: 'POST', body: { userId: cId }, cookie: cookies.b }), res);
+    ok('B blocks C 201', res.statusCode === 201);
 
     res = mockRes();
-    await send(mockReq({ method: 'POST', body: { type: 'dm', id: bId, body: 'should fail' }, cookie: cookies.admin }), res);
+    await blocks(mockReq({ method: 'POST', body: { userId: aId }, cookie: cookies.b }), res);
+    ok('block admin 400', res.statusCode === 400);
+
+    res = mockRes();
+    await send(mockReq({ method: 'POST', body: { type: 'dm', id: bId, body: 'should fail' }, cookie: cookies.c }), res);
     ok('dm to blocker 403', res.statusCode === 403);
 
     res = mockRes();
@@ -339,12 +348,18 @@ async function dbTests() {
     ok('B room send ok', res.statusCode === 201);
 
     res = mockRes();
-    await msgs(mockReq({ method: 'GET', query: { type: 'room', id: 'general', since: '0' }, cookie: cookies.admin }), res);
-    const hidden = !(json(res).messages || []).some((m) => m.body === 'B room msg');
-    ok("blocker's poll hides blocked user", res.statusCode === 200 && hidden);
+    await send(mockReq({ method: 'POST', body: { type: 'room', id: 'general', body: 'C room msg' }, cookie: cookies.c }), res);
+    ok('C room send ok', res.statusCode === 201);
 
     res = mockRes();
-    await unblock(mockReq({ method: 'DELETE', query: { userId: String(aId) }, cookie: cookies.b }), res);
+    await msgs(mockReq({ method: 'GET', query: { type: 'room', id: 'general', since: '0' }, cookie: cookies.b }), res);
+    const msgsB = json(res).messages || [];
+    const seesOwn = msgsB.some((m) => m.body === 'B room msg');
+    const hidesBlocked = !msgsB.some((m) => m.body === 'C room msg');
+    ok("blocker's poll hides blocked user", res.statusCode === 200 && seesOwn && hidesBlocked);
+
+    res = mockRes();
+    await unblock(mockReq({ method: 'DELETE', query: { userId: String(cId) }, cookie: cookies.b }), res);
     ok('unblock 200', res.statusCode === 200);
 
     res = mockRes();

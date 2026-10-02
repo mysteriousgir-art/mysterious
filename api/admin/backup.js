@@ -1,6 +1,6 @@
 // GET /api/admin/backup  (admin only; full JSON data dump download)
 // Serverless has no .db file, so this exports every table as JSON.
-const u = require('../../_lib/util');
+const u = require('./../_lib/util');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return u.methodNotAllowed(res, ['GET']);

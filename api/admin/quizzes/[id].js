@@ -1,5 +1,5 @@
 // /api/admin/quizzes/:id — PUT (update) / DELETE (remove). Admin only.
-const u = require('../../../_lib/util');
+const u = require('./../../_lib/util');
 
 function validQuiz(v) {
   return v && Array.isArray(v.questions) &&

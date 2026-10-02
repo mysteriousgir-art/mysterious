@@ -1,5 +1,5 @@
 // GET /api/users/:id/public  (404 if banned or block either way)
-const u = require('../../_lib/util');
+const u = require('./../../_lib/util');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return u.methodNotAllowed(res, ['GET']);

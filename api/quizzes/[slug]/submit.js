@@ -1,5 +1,5 @@
 // POST /api/quizzes/:slug/submit  (auth required; grades server-side, +XP)
-const u = require('../../_lib/util');
+const u = require('./../../_lib/util');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return u.methodNotAllowed(res, ['POST']);

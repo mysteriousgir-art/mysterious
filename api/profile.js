@@ -1,5 +1,5 @@
 // /api/profile — GET (own profile) / PUT (update profile). Auth required.
-const u = require('../_lib/util');
+const u = require('./_lib/util');
 
 module.exports = async function handler(req, res) {
   try {

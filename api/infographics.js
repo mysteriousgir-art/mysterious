@@ -1,6 +1,6 @@
 // GET /api/infographics  (served from bundled data file; images live in /img/infographics/)
-const u = require('../_lib/util');
-const infographics = require('../../data/infographics.json');
+const u = require('./_lib/util');
+const infographics = require('../data/infographics.json');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return u.methodNotAllowed(res, ['GET']);

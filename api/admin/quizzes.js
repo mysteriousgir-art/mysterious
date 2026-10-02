@@ -1,5 +1,5 @@
 // POST /api/admin/quizzes  (admin only; create quiz)
-const u = require('../../_lib/util');
+const u = require('./../_lib/util');
 
 function validQuiz(v) {
   return v && Array.isArray(v.questions) &&

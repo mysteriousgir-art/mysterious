@@ -1,5 +1,5 @@
 // GET /api/admin/stats  (admin only; dashboard metrics)
-const u = require('../../_lib/util');
+const u = require('./../_lib/util');
 
 function daysAgo(n) {
   const d = new Date();

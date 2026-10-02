@@ -1,7 +1,7 @@
 // GET /api/chat/messages?type=room&id=<slug>&since=<lastId>
 //    /api/chat/messages?type=dm&id=<userId>&since=<lastId>
 // Polling replacement for socket.io history. Auth required.
-const u = require('../_lib/util');
+const u = require('./../_lib/util');
 
 const LIMIT = 50;
 

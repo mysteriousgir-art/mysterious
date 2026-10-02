@@ -1,5 +1,5 @@
 // POST /api/admin/users/:id/ban  (admin only; also drops their sessions)
-const u = require('../../../_lib/util');
+const u = require('./../../../_lib/util');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return u.methodNotAllowed(res, ['POST']);
