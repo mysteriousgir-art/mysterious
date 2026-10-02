@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Mysterious — Log in or Sign up</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<header id="zehen-nav"></header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="card form-card">
+        <div style="text-align:center;margin-bottom:1rem">
+          <div style="font-size:2.6rem">🧠</div>
+          <h2>Welcome to Mysterious</h2>
+          <p class="small">Track XP, keep streaks, join the community.</p>
+        </div>
+        <div class="tabs">
+          <button id="tab-login" class="active" type="button">Log in</button>
+          <button id="tab-signup" type="button">Sign up</button>
+        </div>
+
+        <div id="auth-error"></div>
+
+        <!-- LOGIN -->
+        <form id="form-login" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input class="input" id="login-email" type="email" autocomplete="email" required placeholder="you@example.com">
+            <div class="err">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input class="input" id="login-password" type="password" autocomplete="current-password" required placeholder="••••••••">
+            <div class="err">Please enter your password.</div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="login-btn">Log in</button>
+        </form>
+
+        <!-- SIGNUP -->
+        <form id="form-signup" style="display:none" novalidate>
+          <div class="field">
+            <label for="su-name">Display name</label>
+            <input class="input" id="su-name" type="text" maxlength="40" required placeholder="e.g. MindExplorer" autocomplete="nickname">
+            <div class="err">Please choose a display name (2–40 characters).</div>
+          </div>
+          <div class="field">
+            <label for="su-email">Email</label>
+            <input class="input" id="su-email" type="email" autocomplete="email" required placeholder="you@example.com">
+            <div class="err">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="su-pass">Password</label>
+            <input class="input" id="su-pass" type="password" autocomplete="new-password" required placeholder="At least 6 characters">
+            <div class="err">Password must be at least 6 characters.</div>
+          </div>
+          <div class="field">
+            <label for="su-country">Country</label>
+            <select class="input" id="su-country" required></select>
+            <div class="err">Please select your country.</div>
+          </div>
+          <button class="btn btn-terra btn-block" type="submit" id="signup-btn">Create account</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="zehen-footer"></footer>
+<script src="js/nav.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

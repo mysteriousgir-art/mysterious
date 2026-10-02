@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mysterious — The Psychology Learning Universe</title>
+<meta name="description" content="Mysterious is a calm place to learn psychology: bite-size notes, quizzes, memory games and a friendly study community.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<header id="zehen-nav"></header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">Learn · Play · Connect</span>
+      <h1>Understand the mind, one calm step at a time.</h1>
+      <p>Mysterious is your psychology learning universe — short, example-rich notes, quick quizzes, brain games, daily streaks and a kind community of fellow learners.</p>
+      <div class="btn-row">
+        <a class="btn btn-terra btn-lg" href="notes.html">Start learning</a>
+        <a class="btn btn-ghost btn-lg" href="games.html" style="color:#fff;border-color:rgba(255,255,255,.5)">Play a game</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-3" id="home-widgets" style="margin-bottom:2.5rem">
+        <div class="streak-card" id="streak-widget" style="display:none">
+          <div class="streak-num">🔥 <span id="streak-count">0</span></div>
+          <h3>Your streak</h3>
+          <p id="streak-sub">Check in daily to keep your streak alive and earn XP.</p>
+          <button class="btn btn-primary" id="checkin-btn" style="background:#fff;color:var(--teal-800)">✓ Check in today</button>
+        </div>
+        <div class="card hoverable" id="progress-widget" style="display:none">
+          <h3>📊 Your progress</h3>
+          <p class="small">XP <strong id="pw-xp">0</strong> · Level <strong id="pw-level">1</strong></p>
+          <h3 style="margin-top:1rem">🎯 Today's tasks</h3>
+          <ul class="task-list" id="pw-tasks"><li class="small">Loading…</li></ul>
+        </div>
+        <div class="card" id="join-widget" style="display:none">
+          <h3>🌱 Join Mysterious</h3>
+          <p>Create a free account to track XP, keep a daily streak, play games on the leaderboard and chat with fellow learners.</p>
+          <a class="btn btn-primary" href="auth.html">Create free account</a>
+        </div>
+      </div>
+
+      <h2>What you can do here</h2>
+      <p class="lead">Four gentle paths into the science of mind and behaviour.</p>
+      <div class="grid grid-4" style="margin-top:1.4rem">
+        <a class="card hoverable" href="notes.html">
+          <div style="font-size:2.2rem">📚</div>
+          <h3>Notes library</h3>
+          <p class="small">Short psychology notes, each point paired with a simple real-life example.</p>
+        </a>
+        <a class="card hoverable" href="quizzes.html">
+          <div style="font-size:2.2rem">🧩</div>
+          <h3>Quizzes</h3>
+          <p class="small">Test yourself after each note and earn XP for every correct answer.</p>
+        </a>
+        <a class="card hoverable" href="games.html">
+          <div style="font-size:2.2rem">🎮</div>
+          <h3>Games</h3>
+          <p class="small">Memory match and Guess-the-Theorist games — climb the leaderboard.</p>
+        </a>
+        <a class="card hoverable" href="community.html">
+          <div style="font-size:2.2rem">💬</div>
+          <h3>Community</h3>
+          <p class="small">Study rooms and 1:1 chats with learners around the world.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="wrap">
+      <div class="card" style="border-left:5px solid var(--terra-500);max-width:52rem">
+        <span class="chip terra">About the Founder</span>
+        <span class="sig-large">Attiya Batool</span>
+        <p style="margin-bottom:.6rem">Mysterious was created by <strong>Attiya Batool</strong>, an applied psychology student who believes learning about the mind should feel calm, kind and welcoming. She built this platform as a warm, safe place where anyone — from curious beginners to fellow students — can explore psychology through short notes, playful quizzes and friendly conversation.</p>
+        <p style="margin-bottom:0">As founder and admin, Attiya personally looks after every corner of Mysterious, so the community stays supportive and the content stays trustworthy. Welcome in — this universe was made for you. 🌿</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="wrap">
+      <h2>Popular notes</h2>
+      <p class="lead">Most-read pieces from the library.</p>
+      <div class="grid grid-3" id="top-notes" style="margin-top:1.4rem"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Visual learning</h2>
+      <p class="lead">Infographics make big ideas stick. Tap any image to view it full-size.</p>
+      <div class="gallery" id="infographics" style="margin-top:1.4rem"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="zehen-footer"></footer>
+<script src="js/nav.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

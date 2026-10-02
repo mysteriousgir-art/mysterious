@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes Library — Mysterious</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<header id="zehen-nav"></header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <h1>📚 Notes library</h1>
+      <p class="lead">Short psychology notes with a real-life example for every point. Reading a note earns <strong>+20 XP</strong>.</p>
+
+      <div class="toolbar">
+        <input class="input" id="search" type="search" placeholder="Search notes… (e.g. memory, stress)" aria-label="Search notes">
+      </div>
+      <div class="chip-row" id="chips"></div>
+      <div class="grid grid-3" id="notes-grid"></div>
+      <div id="notes-empty" style="display:none"><div class="alert alert-info">No notes match your search. Try a different word or category.</div></div>
+    </div>
+  </section>
+</main>
+
+<footer id="zehen-footer"></footer>
+<script src="js/nav.js"></script>
+<script src="js/notes.js"></script>
+</body>
+</html>
