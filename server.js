@@ -527,6 +527,13 @@ app.post('/api/reports', requireAuth, reportBlockLimiter, (req, res) => {
 
 // ================= admin API =================
 
+// Admin-only database backup download (safety copy for free hosting)
+app.get('/api/admin/backup', requireAdmin, (req, res) => {
+  if (!fs.existsSync(DATABASE_PATH)) return res.status(404).json({ error: 'no database file' });
+  const stamp = new Date().toISOString().slice(0, 10);
+  res.download(DATABASE_PATH, `mysterious-backup-${stamp}.db`);
+});
+
 app.get('/api/admin/stats', requireAdmin, (req, res) => {
   const today = todayUtc();
   const one = (sql, ...p) => db.prepare(sql).get(...p);
