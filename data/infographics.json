@@ -40,6 +40,41 @@
     "topic": "Learning"
   },
   {
+    "file": "anxiety-disorders.png",
+    "title": "Anxiety Disorders",
+    "topic": "Clinical Psychology"
+  },
+  {
+    "file": "piagets-stages.png",
+    "title": "Piaget's Cognitive Stages",
+    "topic": "Developmental Psychology"
+  },
+  {
+    "file": "eriksons-stages.png",
+    "title": "Erikson's Psychosocial Stages",
+    "topic": "Developmental Psychology"
+  },
+  {
+    "file": "attachment-theory.png",
+    "title": "Attachment Theory",
+    "topic": "Developmental Psychology"
+  },
+  {
+    "file": "conformity-obedience.png",
+    "title": "Conformity & Obedience",
+    "topic": "Social Psychology"
+  },
+  {
+    "file": "cbt-basics.png",
+    "title": "CBT Basics",
+    "topic": "Counseling & Therapy"
+  },
+  {
+    "file": "leadership-styles.png",
+    "title": "Leadership Styles",
+    "topic": "Organizational Psychology"
+  },
+  {
     "title": "The Neuron in Depth",
     "topic": "Biological Psychology",
     "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-1.png"
