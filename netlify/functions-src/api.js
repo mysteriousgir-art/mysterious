@@ -184,8 +184,9 @@ function notFound() {
 exports.handler = async (event, context) => {
   try {
     let p = event.path || '';
-    const prefix = '/.netlify/functions/api';
-    if (p.indexOf(prefix) === 0) p = p.slice(prefix.length);
+    // Netlify may pass the rewritten path (/.netlify/functions/api/...)
+    // or the original path (/api/...); accept both.
+    p = p.replace(/^\/.netlify\/functions\/api/, '').replace(/^\/api/, '');
     p = p.replace(/^\/+|\/+$/g, '');
     const segs = p ? p.split('/') : [];
 
