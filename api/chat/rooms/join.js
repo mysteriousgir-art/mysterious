@@ -16,9 +16,20 @@ module.exports = async function handler(req, res) {
       const { data: room } = await sb.from('rooms').select('slug, requires_approval').eq('slug', slug).maybeSingle();
       if (!room) return u.send(res, 404, { error: 'room not found' });
       const { data: m } = await sb.from('room_members').select('approved').eq('room_slug', slug).eq('user_id', me.id).maybeSingle();
+      const approved = m ? m.approved : null;
+      // trial messages used (for unapproved members in approval rooms)
+      let trial_used = 0;
+      const TRIAL_LIMIT = 5;
+      if (room.requires_approval === 1 && approved !== 1) {
+        const { count } = await sb.from('messages').select('id', { count: 'exact', head: true })
+          .eq('kind', 'room').eq('room_slug', slug).eq('from_id', me.id);
+        trial_used = count || 0;
+      }
       return u.send(res, 200, {
         requires_approval: room.requires_approval === 1 ? 1 : 0,
-        approved: m ? m.approved : null,
+        approved,
+        trial_used,
+        trial_limit: TRIAL_LIMIT,
       });
     }
 

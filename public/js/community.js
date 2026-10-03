@@ -13,7 +13,8 @@ var lastId = 0;
 var renderedIds = null;     // Set of message ids already in the DOM
 var pendingTemp = null;     // {body, el} optimistic echo awaiting server echo
 var tempCounter = 0;
-var roomAccess = { requires_approval: 0, approved: null }; // current room's approval state
+var roomAccess = { requires_approval: 0, approved: null, trial_used: 0, trial_limit: 5 }; // current room's approval state
+var adminContact = null; // cached admin contact card
 
 function gate(){
   var g = document.getElementById("chat-gate");
@@ -135,35 +136,74 @@ function openRoom(slug, name, description){
 async function checkRoomAccess(slug){
   try{
     var s = await api("/api/chat/rooms/join?slug=" + encodeURIComponent(slug));
-    roomAccess = { requires_approval: s.requires_approval ? 1 : 0, approved: s.approved };
+    roomAccess = {
+      requires_approval: s.requires_approval ? 1 : 0,
+      approved: s.approved,
+      trial_used: s.trial_used || 0,
+      trial_limit: s.trial_limit || 5
+    };
   }catch(e){
-    roomAccess = { requires_approval: 0, approved: 1 }; // fail open for reading; send API still enforces
+    roomAccess = { requires_approval: 0, approved: 1, trial_used: 0, trial_limit: 5 }; // fail open for reading; send API still enforces
   }
   applyAccessUI();
+}
+
+function adminMsgBtn(){
+  return '<button class="btn btn-ghost btn-sm" id="room-admin-dm">💬 Message Admin</button>';
+}
+
+async function openAdminDM(){
+  try{
+    if(!adminContact) adminContact = await api("/api/admin/contact");
+    openDM(adminContact.userId);
+  }catch(e){ toast("Could not reach admin: " + e.message, "err"); }
 }
 
 function applyAccessUI(){
   var inputRow = document.getElementById("chat-input-row");
   var gate = document.getElementById("room-gate");
   if(!view || view.type !== "room"){ if(gate) gate.style.display = "none"; return; }
-  var needApproval = roomAccess.requires_approval === 1 && roomAccess.approved !== 1;
-  if(!needApproval){
+  var isApprovalRoom = roomAccess.requires_approval === 1;
+  var isApproved = roomAccess.approved === 1;
+  var trialLeft = Math.max(0, (roomAccess.trial_limit || 5) - (roomAccess.trial_used || 0));
+
+  if(!isApprovalRoom || isApproved){
     inputRow.style.display = "";
     if(gate) gate.style.display = "none";
     return;
   }
-  inputRow.style.display = "none";
-  if(!gate) return;
-  gate.style.display = "";
-  if(roomAccess.approved === 0){
-    gate.innerHTML = '<div class="alert alert-info" style="margin:0">⏳ <strong>Waiting for admin approval.</strong> You can read messages, but only approved members can send messages here.</div>';
-  }else{
+  // Approval room, not yet approved
+  if(trialLeft > 0 && roomAccess.approved === null){
+    // fresh trial: show input + trial notice
+    inputRow.style.display = "";
+    gate.style.display = "";
     gate.innerHTML = '<div class="alert alert-info" style="margin:0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">' +
-      '<span>🔒 <strong>Admin approval needed</strong> to send messages in this community.</span>' +
-      '<button class="btn btn-primary btn-sm" id="room-req-btn">Request permission</button></div>';
+      "<span>🌱 <strong>" + trialLeft + " trial messages</strong> left — then admin approval is needed to continue. " + adminMsgBtn() + "</span></div>";
+  }else if(trialLeft > 0){
+    inputRow.style.display = "";
+    gate.style.display = "";
+    gate.innerHTML = '<div class="alert alert-info" style="margin:0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">' +
+      "<span>🌱 <strong>" + trialLeft + " trial messages</strong> left. " + adminMsgBtn() + "</span>" +
+      '<button class="btn btn-primary btn-sm" id="room-req-btn">Request approval</button></div>';
     var b = document.getElementById("room-req-btn");
     if(b) b.addEventListener("click", requestRoomAccess);
+  }else{
+    // trial exhausted, waiting for approval
+    inputRow.style.display = "none";
+    gate.style.display = "";
+    if(roomAccess.approved === 0){
+      gate.innerHTML = '<div class="alert alert-info" style="margin:0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">' +
+        "<span>⏳ <strong>Waiting for admin approval.</strong> You can read messages and DM the admin. " + adminMsgBtn() + "</span></div>";
+    }else{
+      gate.innerHTML = '<div class="alert alert-info" style="margin:0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">' +
+        "<span>🔒 <strong>Trial messages used.</strong> Request approval to continue chatting. " + adminMsgBtn() + "</span>" +
+        '<button class="btn btn-primary btn-sm" id="room-req-btn">Request approval</button></div>';
+      var b2 = document.getElementById("room-req-btn");
+      if(b2) b2.addEventListener("click", requestRoomAccess);
+    }
   }
+  var adb = document.getElementById("room-admin-dm");
+  if(adb) adb.addEventListener("click", openAdminDM);
 }
 
 async function requestRoomAccess(){
@@ -330,7 +370,12 @@ async function send(){
     if(tempEl && tempEl.parentNode) tempEl.parentNode.removeChild(tempEl);
     pendingTemp = null;
     inp.value = body;
-    toast(e.message, "err");
+    if(e.status === 403 && /trial over|approval/.test(e.message || "")){
+      toast("🌱 Trial messages finished — waiting for admin approval.", "err");
+      if(view && view.type === "room") checkRoomAccess(view.id);
+    }else{
+      toast(e.message, "err");
+    }
   }
 }
 
@@ -371,6 +416,8 @@ document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("chat-input").addEventListener("keydown", function(e){
     if(e.key === "Enter") send();
   });
+  var admBtn = document.getElementById("sidebar-admin-dm");
+  if(admBtn) admBtn.addEventListener("click", openAdminDM);
   if(window.zehenUserLoaded){
     me = window.zehenUser;
     if(me) gate();

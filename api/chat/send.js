@@ -37,7 +37,14 @@ module.exports = async function handler(req, res) {
       if (!room) return u.send(res, 404, { error: 'room not found' });
       if (room.requires_approval === 1 && fresh.is_admin !== 1) {
         const { data: mem } = await sb.from('room_members').select('approved').eq('room_slug', slug).eq('user_id', me.id).maybeSingle();
-        if (!mem || mem.approved !== 1) return u.send(res, 403, { error: 'needs admin approval to send messages here' });
+        if (!mem || mem.approved !== 1) {
+          // Trial: unapproved members get 5 messages, then wait for admin approval
+          const { count } = await sb.from('messages').select('id', { count: 'exact', head: true })
+            .eq('kind', 'room').eq('room_slug', slug).eq('from_id', me.id);
+          if ((count || 0) >= 5) {
+            return u.send(res, 403, { error: 'trial over — waiting for admin approval to send more messages' });
+          }
+        }
       }
       const { data: ins, error } = await sb.from('messages')
         .insert({ kind: 'room', room_slug: slug, from_id: me.id, body })
