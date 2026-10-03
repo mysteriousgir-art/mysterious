@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographics — Mysterious</title>
+<meta name="description" content="Browse 200+ beautiful psychology infographics — brain, memory, emotions, personality and more on Mysterious.">
+<link rel="canonical" href="https://mysteriousnet.netlify.app/infographics.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mysterious">
+<meta property="og:title" content="Infographics — Mysterious">
+<meta property="og:description" content="Browse 200+ beautiful psychology infographics — brain, memory, emotions, personality and more on Mysterious.">
+<meta property="og:url" content="https://mysteriousnet.netlify.app/infographics.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Infographics — Mysterious">
+<meta name="twitter:description" content="Browse 200+ beautiful psychology infographics — brain, memory, emotions, personality and more on Mysterious.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<header id="zehen-nav"></header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <h1>🖼️ Infographics</h1>
+      <p class="lead">Big psychology ideas, made visual. Search, filter and tap any image to view it full-size.</p>
+      <div style="margin-top:1.2rem;max-width:28rem">
+        <input class="input" id="gal-search" placeholder="🔍 Search infographics… (e.g. memory, stress, brain)" autocomplete="off">
+      </div>
+      <div class="gal-filters" id="gal-filters"></div>
+      <p class="small" id="gal-count" style="margin-top:.8rem"></p>
+      <div class="gallery" id="infographics" style="margin-top:1rem"></div>
+      <div class="gal-more" id="gal-more"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="zehen-footer"></footer>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+"use strict";
+var galItems = [], galFilter = "All", galQuery = "", galShown = 24;
+var GAL_PAGE = 24;
+
+function galCard(g){
+  return '<a href="' + esc(g.url) + '" target="_blank" rel="noopener">' +
+    '<img src="' + esc(g.url) + '" alt="' + esc(g.title) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+    '<div class="cap">' + esc(g.title) + "<small>" + esc(g.topic || "") + "</small></div></a>";
+}
+function filtered(){
+  return galItems.filter(function(g){
+    var okF = galFilter === "All" || g.topic === galFilter;
+    var q = galQuery.trim().toLowerCase();
+    var okQ = !q || (g.title + " " + (g.topic || "")).toLowerCase().indexOf(q) >= 0;
+    return okF && okQ;
+  });
+}
+function render(){
+  var box = document.getElementById("infographics"),
+      filters = document.getElementById("gal-filters"),
+      moreBox = document.getElementById("gal-more"),
+      count = document.getElementById("gal-count");
+  var topics = ["All"];
+  galItems.forEach(function(g){ if(g.topic && topics.indexOf(g.topic) < 0) topics.push(g.topic); });
+  filters.innerHTML = topics.map(function(t){
+    return '<button class="chip-btn' + (t === galFilter ? " active" : "") + '" data-gal="' + esc(t) + '">' + esc(t) + "</button>";
+  }).join("");
+  filters.querySelectorAll("[data-gal]").forEach(function(b){
+    b.addEventListener("click", function(){ galFilter = b.getAttribute("data-gal"); galShown = GAL_PAGE; render(); });
+  });
+  var list = filtered();
+  count.textContent = list.length + " infographic" + (list.length === 1 ? "" : "s");
+  box.innerHTML = list.slice(0, galShown).map(galCard).join("") || '<p class="small">No matches — try another search. 🌿</p>';
+  if(list.length > galShown){
+    moreBox.innerHTML = '<button class="btn btn-ghost" id="gal-more-btn">Show more (' + (list.length - galShown) + " remaining)</button>";
+    document.getElementById("gal-more-btn").addEventListener("click", function(){ galShown += GAL_PAGE; render(); });
+  }else moreBox.innerHTML = "";
+}
+async function load(){
+  var box = document.getElementById("infographics");
+  loadingBox(box, "Loading infographics…");
+  try{
+    var items = await api("/api/infographics");
+    galItems = items || [];
+    render();
+  }catch(e){ errorBox(box, "Could not load infographics. " + e.message); }
+}
+document.addEventListener("DOMContentLoaded", function(){
+  load();
+  var s = document.getElementById("gal-search");
+  var t = null;
+  s.addEventListener("input", function(){
+    clearTimeout(t);
+    t = setTimeout(function(){ galQuery = s.value; galShown = GAL_PAGE; render(); }, 250);
+  });
+  if(window.zehenUserLoaded) return;
+});
+})();
+</script>
+</body>
+</html>
