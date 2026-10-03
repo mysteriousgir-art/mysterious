@@ -92,6 +92,7 @@ var NAV_LINKS = [
   ["notes.html","Notes"],
   ["quizzes.html","Quizzes"],
   ["games.html","Games"],
+  ["videos.html","Videos"],
   ["community.html","Community"]
 ];
 
@@ -156,7 +157,7 @@ function renderFooter(){
       '<div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:space-between;width:100%">' +
         '<div><div class="flogo">🧠 Mysterious</div><div class="fsig">by Attiya Batool · Founder &amp; Admin</div><p style="color:rgba(255,255,255,.65);margin:.5rem 0 0;max-width:20rem">A calm corner of the internet to learn psychology — notes, quizzes, games and a friendly community.</p></div>' +
         '<div><strong style="color:#fff">Explore</strong><br>' +
-          '<a href="notes.html">Notes library</a><br><a href="quizzes.html">Quizzes</a><br><a href="games.html">Games &amp; leaderboard</a></div>' +
+          '<a href="notes.html">Notes library</a><br><a href="quizzes.html">Quizzes</a><br><a href="games.html">Games &amp; leaderboard</a><br><a href="videos.html">3D videos</a></div>' +
         '<div><strong style="color:#fff">Community</strong><br>' +
           '<a href="community.html">Study rooms</a><br><a href="profile.html">Your profile</a><br><a href="auth.html">Join Mysterious</a></div>' +
       "</div>" +
