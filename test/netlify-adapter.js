@@ -20,7 +20,7 @@ const ROOT = path.join(__dirname, '..');
 const ADMIN_TEST_EMAIL = 'netlifytest-admin@example.com';
 process.env.ADMIN_EMAIL = ADMIN_TEST_EMAIL;
 
-const { handler, __test__ } = require('../netlify/functions/api.js');
+const { handler, __test__ } = require('../netlify/functions-src/api.js');
 const { createClient } = require('@supabase/supabase-js');
 const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY, { auth: { persistSession: false } });
 

@@ -11,7 +11,11 @@
   "main": "api/health.js",
   "name": "mysterious",
   "scripts": {
-    "test": "node test/harness.js"
+    "test": "node test/harness.js",
+    "build:netlify": "esbuild netlify/functions-src/api.js --bundle --platform=node --outfile=netlify/functions/api.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
 }

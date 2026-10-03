@@ -1,11 +1,17 @@
 # Netlify configuration for the Mysterious website.
 # The frontend (public/) is served statically; /api/* is rewritten (status 200,
 # invisible to the browser) to the single catch-all function
-# netlify/functions/api.js, which routes to the handlers in api/.
+# netlify/functions/api.js.
+#
+# The function file is BUILT (not hand-written): the build command bundles
+# netlify/functions-src/api.js + the 37 handlers in api/ into one
+# self-contained netlify/functions/api.js via esbuild, so Netlify's bundler
+# has no cross-directory requires to trace (that broke production -> 502).
 
 [build]
   publish = "public"
   functions = "netlify/functions"
+  command = "npm run build:netlify"
 
 [[redirects]]
   from = "/api/*"
