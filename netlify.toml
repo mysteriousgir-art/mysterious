@@ -1,0 +1,13 @@
+# Netlify configuration for the Mysterious website.
+# The frontend (public/) is served statically; /api/* is rewritten (status 200,
+# invisible to the browser) to the single catch-all function
+# netlify/functions/api.js, which routes to the handlers in api/.
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
