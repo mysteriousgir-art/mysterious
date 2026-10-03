@@ -337,9 +337,11 @@ textarea.input{min-height:7rem;resize:vertical}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1.2rem}
 .gallery a{display:block;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);background:#fff;transition:transform .15s;text-decoration:none!important}
 .gallery a:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.gallery img{width:100%;height:11rem;object-fit:cover;display:block;background:var(--slate-100)}
+.gallery img{width:100%;height:16rem;object-fit:cover;display:block;background:var(--slate-100)}
 .gallery .cap{padding:.8rem 1rem;font-weight:700;font-size:.95rem;color:var(--slate-900)}
 .gallery .cap small{display:block;font-weight:400;color:var(--slate-500)}
+.gal-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.gal-more{text-align:center;margin-top:1.4rem}
 
 /* ---------- Admin ---------- */
 .admin-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}

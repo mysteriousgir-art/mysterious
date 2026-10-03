@@ -26,6 +26,43 @@ async function loadTopNotes(){
   }
 }
 
+var galItems = [];
+var galFilter = "All";
+var galShown = 12;
+const GAL_PAGE = 12;
+
+function galCard(g){
+  return '<a href="' + esc(g.url) + '" target="_blank" rel="noopener">' +
+    '<img src="' + esc(g.url) + '" alt="' + esc(g.title) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+    '<div class="cap">' + esc(g.title) + "<small>" + esc(g.topic || "") + "</small></div>" +
+  "</a>";
+}
+
+function renderGallery(){
+  var box = document.getElementById("infographics");
+  var filters = document.getElementById("gal-filters");
+  var moreBox = document.getElementById("gal-more");
+  var topics = ["All"];
+  galItems.forEach(function(g){ if(g.topic && topics.indexOf(g.topic) < 0) topics.push(g.topic); });
+  var list = galFilter === "All" ? galItems : galItems.filter(function(g){ return g.topic === galFilter; });
+  if(filters){
+    filters.innerHTML = topics.map(function(t){
+      return '<button class="chip-btn' + (t === galFilter ? " active" : "") + '" data-gal="' + esc(t) + '">' + esc(t) + "</button>";
+    }).join("");
+    filters.querySelectorAll("[data-gal]").forEach(function(b){
+      b.addEventListener("click", function(){ galFilter = b.getAttribute("data-gal"); galShown = GAL_PAGE; renderGallery(); });
+    });
+  }
+  box.innerHTML = list.slice(0, galShown).map(galCard).join("") ||
+    '<p class="small">No infographics in this category yet.</p>';
+  if(moreBox){
+    if(list.length > galShown){
+      moreBox.innerHTML = '<button class="btn btn-ghost" id="gal-more-btn">Show more (' + (list.length - galShown) + " remaining)</button>";
+      document.getElementById("gal-more-btn").addEventListener("click", function(){ galShown += GAL_PAGE; renderGallery(); });
+    }else moreBox.innerHTML = "";
+  }
+}
+
 async function loadInfographics(){
   var box = document.getElementById("infographics");
   loadingBox(box, "Loading infographics…");
@@ -35,12 +72,10 @@ async function loadInfographics(){
       box.innerHTML = '<p class="small">Infographics are on their way — check back soon.</p>';
       return;
     }
-    box.innerHTML = items.map(function(g){
-      return '<a href="' + esc(g.url) + '" target="_blank" rel="noopener">' +
-        '<img src="' + esc(g.url) + '" alt="' + esc(g.title) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
-        '<div class="cap">' + esc(g.title) + "<small>" + esc(g.topic || "") + "</small></div>" +
-      "</a>";
-    }).join("");
+    galItems = items;
+    galFilter = "All";
+    galShown = GAL_PAGE;
+    renderGallery();
   }catch(e){
     errorBox(box, "Could not load infographics. " + e.message);
   }
