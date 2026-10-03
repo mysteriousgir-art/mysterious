@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /profile.html
 
-Sitemap: https://mysteriousnet.netlify.app/sitemap.xml
+Sitemap: https://mysteriouslearning.netlify.app/sitemap.xml

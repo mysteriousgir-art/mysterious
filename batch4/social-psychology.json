@@ -1,0 +1,1082 @@
+[
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "When your friend arrives late to dinner, you might think she is careless (internal) or that traffic was terrible (external).",
+    "point": "Attribution theory, started by Fritz Heider in 1958, explains how we figure out the causes of behavior. We act like naive scientists, constantly asking why people do what they do. Every explanation we make is either internal (about the person) or external (about the situation)."
+   },
+   {
+    "example": "A classmate who fails a test might be called lazy, but maybe the exam was unfairly hard.",
+    "point": "Internal attributions blame personality, ability, or effort — things inside the person. External attributions blame luck, task difficulty, or other people — things outside the person. The same behavior can be explained either way, and our choice shapes how we treat people."
+   },
+   {
+    "example": "If a student volunteers to tutor others even though no one asked and no reward is offered, you conclude she is genuinely kind.",
+    "point": "Jones and Davis's correspondent inference theory says we infer a person's true traits from their actions. We are most confident when the behavior was freely chosen, went against social expectations, and had unusual (non-common) effects. Freely chosen odd behavior tells us the most about character."
+   },
+   {
+    "example": "A quiet coworker suddenly shouts at a meeting — you look for what triggered it because this is unusual for her.",
+    "point": "Unexpected behavior grabs our attention and triggers deeper analysis. When someone acts out of character, we search harder for causes. When behavior matches what we expect, we barely think about why it happened."
+   },
+   {
+    "example": "Your friend laughs at every movie you watch together (high consensus), laughs at every joke he hears (low distinctiveness), and has always laughed this way (high consistency) — so you conclude he is just a cheerful person.",
+    "point": "Kelley's covariation model uses three clues. Consensus: do others act the same way? Consistency: does the person always act this way? Distinctiveness: does the person act this way only in this situation? High consensus, high consistency, and high distinctiveness point to the situation; the opposite pattern points to the person."
+   },
+   {
+    "example": "Everyone in class failed the quiz (high consensus), so you blame the difficult questions, not the students.",
+    "point": "When many people behave the same way in one situation, we make external attributions. If only one person struggles while others succeed (low consensus), we blame the person. This logic works well but real life rarely gives us all three clues clearly."
+   },
+   {
+    "example": "A new employee who is rude on day one may just be nervous, but coworkers may permanently label him as rude.",
+    "point": "Attributions form fast and stick. First impressions bias later judgments — once we decide someone is friendly or hostile, we interpret everything they do through that lens. This is why early attributions matter so much."
+   }
+  ],
+  "slug": "attribution-theory",
+  "summary": "Why do we do what we do? Attribution theory explains how we judge the causes of behavior — Heider, Jones and Davis, and Kelley's famous models in simple words.",
+  "title": "Attribution Theory"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "You see a driver cut you off and think he is a reckless jerk — but maybe he is rushing his sick child to the hospital.",
+    "point": "The fundamental attribution error, named by Lee Ross in 1977, is our habit of overestimating personality and underestimating situations when judging others. We blame the person and ignore the context. It is called fundamental because it happens everywhere, all the time."
+   },
+   {
+    "example": "In Ross's quiz show study, contestants who were randomly assigned to ask questions looked smarter than those assigned to answer — even though everyone knew the roles were random.",
+    "point": "The classic proof: Ross, Amabile, and Steinmetz (1977) randomly made some students quizmasters and others contestants. Both the contestants and the audience rated the quizmasters as more knowledgeable. The random role — a pure situational factor — was completely ignored."
+   },
+   {
+    "example": "When you trip in public, you blame the uneven floor; when a stranger trips, you think they are clumsy.",
+    "point": "The actor-observer bias is the flip side: we explain our own behavior with situations but others' behavior with personality. As actors we see the pressures around us; as observers we only see the person acting."
+   },
+   {
+    "example": "After winning a match you credit your skill; after losing you blame the referee, the weather, or bad luck.",
+    "point": "The self-serving bias protects our ego: we take credit for success (internal) and blame failure on circumstances (external). It keeps self-esteem high but can block learning from mistakes."
+   },
+   {
+    "example": "In Japan, people are more likely than Americans to explain a theft by mentioning poverty or social pressure, not just bad character.",
+    "point": "Culture shapes the error. Individualist cultures (like the US) show the fundamental attribution error strongly. Collectivist cultures (like Japan and China) pay more attention to situations and social context, so the bias is weaker."
+   },
+   {
+    "example": "A teacher who learns about this bias starts asking struggling students about problems at home before judging their effort.",
+    "point": "Why it matters: this error fuels blame, harsh judgments, and unfair punishments. Knowing about it helps us pause and ask what invisible pressures another person might be facing before we judge them."
+   },
+   {
+    "example": "A manager assumes a quiet team member is unfriendly, missing that she is new and anxious about fitting in.",
+    "point": "To fight the bias, deliberately consider situational forces first. Ask what you would do in their position, and remember that you rarely see the full story behind someone's behavior."
+   }
+  ],
+  "slug": "fundamental-attribution-error",
+  "summary": "Why we blame people and ignore situations. The most famous bias in social psychology — what it is, the classic studies, and how to fight it.",
+  "title": "Fundamental Attribution Error"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "You buy an expensive phone, then spend hours reading reviews that praise it and ignoring ones that criticize it.",
+    "point": "Cognitive dissonance, proposed by Leon Festinger in 1957, is the uncomfortable tension we feel when our beliefs, attitudes, or behaviors clash. Because the discomfort is painful, we change something — usually our attitude — to restore harmony."
+   },
+   {
+    "example": "Participants paid $1 to lie about a boring task later said they actually enjoyed it; those paid $20 said it was boring.",
+    "point": "The famous $1/$20 experiment: people told a lie for a tiny reward could not justify lying for money, so they changed their belief instead — deciding the task was fun after all. Those paid $20 had enough justification and felt no need to change their minds."
+   },
+   {
+    "example": "A student who stays up all night for a difficult exam convinces herself the course is fascinating, while one who barely studied calls it useless.",
+    "point": "Effort justification: the harder we work for something, the more we value it. Painful initiations make groups seem more attractive. Our brains refuse to admit we suffered for nothing, so suffering becomes proof of worth."
+   },
+   {
+    "example": "After choosing between two similar jobs, you suddenly see your chosen job as perfect and the rejected one as terrible.",
+    "point": "Post-decision dissonance (spreading of alternatives): after a tough choice, we boost the winner and trash the loser. The closer the options were, the bigger the shift. Buyers' remorse — and its cure — works exactly this way."
+   },
+   {
+    "example": "A smoker who knows smoking kills may insist the evidence is exaggerated or that his grandfather smoked till 90.",
+    "point": "When behavior is hard to change, beliefs bend instead. Smokers, overeaters, and procrastinators often attack the facts rather than fix the habit. Dissonance explains why facts alone rarely change behavior."
+   },
+   {
+    "example": "Someone who publicly argues for a cause they doubted often ends up genuinely believing it.",
+    "point": "Saying becomes believing: when we argue a position publicly with little reward, our private attitude shifts toward our words. This is why forced role-play and debates can genuinely change minds."
+   },
+   {
+    "example": "A company that asks employees to publicly commit to a new policy faces less resistance than one that just orders compliance.",
+    "point": "Smart persuaders use dissonance: get a small public commitment first, and attitudes follow. But the same force can trap us — noticing our own rationalizations is the first step to honest thinking."
+   }
+  ],
+  "slug": "cognitive-dissonance",
+  "summary": "The clash between what we believe and what we do — Festinger's famous theory, the $1/$20 experiment, and why we rationalize everything.",
+  "title": "Cognitive Dissonance"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "You love biryani (affective), believe it is delicious and festive (cognitive), and order it every Friday (behavioral).",
+    "point": "An attitude is a lasting evaluation of people, objects, or ideas. Psychologists describe three parts — the ABC model: affective (feelings), behavioral (actions or intentions), and cognitive (beliefs). All three usually line up, but not always."
+   },
+   {
+    "example": "A child whose parents praise honesty grows up valuing truthfulness without ever being lectured.",
+    "point": "Attitudes form through direct experience, childhood socialization, and observational learning. We absorb our parents' and culture's attitudes early, then reshape them through personal experience and peer influence."
+   },
+   {
+    "example": "A song you hated at first becomes your favorite after hearing it ten times on the radio.",
+    "point": "The mere exposure effect: repeated exposure alone makes things more likable — songs, faces, brands, even people. Familiarity feels safe, so advertisers and politicians repeat messages endlessly."
+   },
+   {
+    "example": "A painful dental visit can create a lifelong fear of dentists from a single bad afternoon.",
+    "point": "Classical conditioning builds attitudes fast: one bad experience pairs an object with negative feelings. Operant conditioning works too — attitudes that win praise and rewards get stronger."
+   },
+   {
+    "example": "You believe exercise is healthy but never work out — because the gym is far, expensive, and lonely.",
+    "point": "Attitudes predict behavior best when they are strong, specific, and easy to recall, and when social pressure is low. General attitudes ('health matters') predict poorly; specific ones ('I will jog tomorrow at 6') predict well."
+   },
+   {
+    "example": "After arguing for recycling in a class debate, a skeptical student starts recycling at home.",
+    "point": "Behavior can change attitudes through cognitive dissonance: when we act against our beliefs without strong justification, our beliefs shift to match our actions. Public commitments are especially powerful attitude-changers."
+   },
+   {
+    "example": "A health campaign that scares smokers with graphic images plus clear quitting steps changes more minds than fear alone.",
+    "point": "To change attitudes: use credible sources, strong clear arguments, emotional appeal balanced with solutions, and repetition. Fear works only when people believe they can act on it — otherwise they just deny the message."
+   }
+  ],
+  "slug": "attitudes-formation-and-change",
+  "summary": "What attitudes are made of, where they come from, and how they change — the ABC model, mere exposure, and the science of persuasion.",
+  "title": "Attitudes: Formation and Change"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Disliking a whole group of people you have never met, simply because of their religion or ethnicity.",
+    "point": "Prejudice is a negative prejudgment — an attitude toward a group and its members. It has three parts: stereotypes (beliefs), emotions (dislike or fear), and a readiness to discriminate (action). Prejudice is learned, not inborn."
+   },
+   {
+    "example": "In Sherif's Robbers Cave study, two groups of boys at summer camp turned hostile within days once put in competition for prizes.",
+    "point": "Realistic conflict theory: prejudice grows from competition over scarce resources — jobs, land, grades. Sherif's 1954 Robbers Cave experiment proved it: normal boys became enemies through rivalry, then friends again through shared goals."
+   },
+   {
+    "example": "Football fans who have never met feel deep loyalty to their club and contempt for rival supporters.",
+    "point": "Social identity theory (Tajfel): we boost self-esteem by identifying with groups and comparing favorably against outsiders. Even random, meaningless groups trigger favoritism — the minimal group experiments showed this with coin flips."
+   },
+   {
+    "example": "A manager who unconsciously hires people who look and speak like him, without any deliberate bias.",
+    "point": "Prejudice also grows from social learning (absorbing family and media biases), scapegoating (blaming powerless groups for frustrations), and mental shortcuts that exaggerate group differences while ignoring individual variation."
+   },
+   {
+    "example": "After a factory closes, some residents blame immigrant workers rather than economic policy.",
+    "point": "Scapegoat theory: frustration seeks a target, and powerless minorities become convenient ones. Economic stress reliably increases prejudice — history's darkest chapters follow this pattern."
+   },
+   {
+    "example": "A school that mixes students of different backgrounds in equal-status team projects sees friendships cross group lines.",
+    "point": "Allport's contact hypothesis: prejudice falls when groups meet under the right conditions — equal status, shared goals, cooperation, and authority support. Casual contact alone is not enough; structured teamwork works."
+   },
+   {
+    "example": "Laws against discrimination, diverse media heroes, and education that teaches perspective-taking all reduce prejudice over time.",
+    "point": "Reduction strategies that work: recategorization (seeing 'us' as one bigger group), perspective-taking exercises, counter-stereotype examples in media, and institutional rules that enforce fair treatment."
+   }
+  ],
+  "slug": "prejudice-roots-and-reduction",
+  "summary": "Where hatred of groups comes from — and how to undo it. Robbers Cave, social identity theory, and proven ways to reduce prejudice.",
+  "title": "Prejudice: Roots and Reduction"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Assuming the quiet new student must be bad at sports because she wears glasses and reads books.",
+    "point": "Stereotypes are generalized beliefs about groups — mental shortcuts that paint every member the same. They form from culture, media, and limited experience. Some are positive ('Asians are good at math') but still harmful because they erase individuals."
+   },
+   {
+    "example": "A manager who only notices mistakes by female drivers while ignoring identical mistakes by male drivers.",
+    "point": "Stereotypes distort perception: we notice information that confirms them and ignore what contradicts them. They also create self-filling prophecies — treating people according to stereotypes pushes them to act that way."
+   },
+   {
+    "example": "Black students told a test measured intelligence scored lower than those told it was just a puzzle — Steele and Aronson, 1995.",
+    "point": "Stereotype threat is the fear of confirming a negative stereotype about your group, and that fear itself hurts performance. Steele and Aronson's classic study showed it can depress test scores of capable students."
+   },
+   {
+    "example": "Girls told 'boys usually do better at this math test' underperform; without that warning, the gap disappears.",
+    "point": "Stereotype threat affects many groups — women in math, white athletes in sports, elderly people in memory tests. The pressure of representing your whole group drains mental resources needed for the task."
+   },
+   {
+    "example": "Describing a math test as a 'puzzle' instead of a 'diagnostic test' removed the performance gap in Steele's study.",
+    "point": "Threat can be reduced: framing tests as fair and non-diagnostic, teaching students about stereotype threat itself, providing role models, and emphasizing that ability grows with effort rather than being fixed."
+   },
+   {
+    "example": "A news channel that always shows one community in crime stories builds stereotypes in millions of viewers.",
+    "point": "Media is a stereotype factory: repeated pairings of groups with roles (criminals, servants, geniuses) wire automatic associations. Diverse, counter-stereotypical portrayals are the antidote."
+   },
+   {
+    "example": "A teacher who learns each student's individual story stops seeing 'the weak group' and starts seeing thirty unique learners.",
+    "point": "Fighting stereotypes: seek individuating information, build real cross-group friendships, question media portrayals, and remember that variation within any group is always larger than differences between groups."
+   }
+  ],
+  "slug": "stereotypes-and-stereotype-threat",
+  "summary": "Mental shortcuts about groups — how stereotypes form, the famous stereotype threat experiments, and how to break their power.",
+  "title": "Stereotypes and Stereotype Threat"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A landlord who refuses to rent to families of a certain ethnicity is discriminating; merely disliking them would be prejudice.",
+    "point": "Discrimination is unfair behavior toward group members, while prejudice is the attitude and stereotypes are the beliefs. You can be prejudiced without discriminating (laws may stop you) and discriminate without personal prejudice (following biased rules)."
+   },
+   {
+    "example": "A company whose hiring tests filter out qualified women, even though nobody intended to exclude them.",
+    "point": "Institutional discrimination is built into policies and systems — hiring tests, lending rules, school funding — producing unequal outcomes without any single bigot. It is often invisible because it looks like neutral procedure."
+   },
+   {
+    "example": "A qualified candidate with a foreign-sounding name gets fewer interview calls than an identical resume with a local name.",
+    "point": "Audit studies prove discrimination is real: identical resumes with different names get different callbacks. This field-experiment method catches bias that surveys miss, because people hide prejudice in questionnaires."
+   },
+   {
+    "example": "Older workers passed over for training because 'they won't learn new technology anyway.'",
+    "point": "Common targets include race, gender, age, religion, disability, and class. Discrimination ranges from hiring bias and unequal pay to harassment and violence — and its stress damages victims' mental and physical health."
+   },
+   {
+    "example": "A country where one group owns most businesses because past laws barred others from owning property.",
+    "point": "Historical discrimination compounds: past exclusion creates present inequality in wealth, education, and networks. This is why equal treatment today does not automatically produce equal outcomes."
+   },
+   {
+    "example": "Blind auditions behind screens dramatically increased women hired by orchestras.",
+    "point": "What reduces discrimination: blind evaluations, structured interviews with fixed criteria, transparent pay, diverse decision-makers, and laws with real enforcement. Removing discretion removes bias."
+   },
+   {
+    "example": "A student who speaks up when friends mock a minority group does more than a hundred silent disagreements.",
+    "point": "Individuals matter too: confronting biased jokes, supporting fair policies, and amplifying excluded voices. Silence looks like approval — speaking up resets the norm."
+   }
+  ],
+  "slug": "discrimination",
+  "summary": "From biased attitudes to unfair actions. What discrimination is, how researchers prove it exists, and what actually reduces it.",
+  "title": "Discrimination"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A normally calm man who punches a wall after being insulted in front of his friends.",
+    "point": "Aggression is behavior intended to harm someone physically or psychologically. Psychologists distinguish hostile aggression (driven by anger, aiming to hurt) from instrumental aggression (harming as a means to another goal, like a boxer winning a match)."
+   },
+   {
+    "example": "Freud argued humans have a death instinct; Lorenz said aggression builds up like steam in a kettle until released.",
+    "point": "Instinct theories are the oldest: Freud blamed a death drive, Lorenz saw aggression as an evolved survival instinct. They explain why aggression is universal but fail to explain why it varies so much between people and cultures."
+   },
+   {
+    "example": "A child denied ice cream throws a tantrum and hits his brother.",
+    "point": "The frustration-aggression hypothesis (Dollard, 1939): blocking a goal creates frustration, which triggers aggression. Later revised: frustration creates readiness for anger, but whether aggression follows depends on cues and consequences."
+   },
+   {
+    "example": "Children who watched an adult punch a Bobo doll later punched it themselves — twice as much as children who saw calm play.",
+    "point": "Bandura's social learning theory: aggression is learned by watching and imitating models, especially rewarded ones. The Bobo doll experiments (1961–63) proved children copy aggressive adults — and media violence works the same way."
+   },
+   {
+    "example": "A teen from a violent neighborhood who is praised by a gang for fighting learns that aggression earns respect.",
+    "point": "Reinforcement matters: aggression that is rewarded (status, money, compliance) gets repeated. Cultures of honor, where insults demand violent response, show how norms shape aggressive habits."
+   },
+   {
+    "example": "A drunk man misreads a bump in a bar as a deliberate attack and starts a fight.",
+    "point": "Alcohol and hostile attribution bias fuel aggression: intoxication narrows thinking and magnifies slights. People who habitually assume hostile intent in ambiguous acts are far more aggressive."
+   },
+   {
+    "example": "Countries with less inequality, better youth programs, and strict weapon control have far lower murder rates.",
+    "point": "Reducing aggression: teach nonviolent problem-solving early, reduce exposure to violent models, punish aggression consistently, build empathy, and change environments — poverty, crowding, and heat all raise aggression rates."
+   }
+  ],
+  "slug": "aggression-theories",
+  "summary": "Why do humans hurt each other? Instinct, frustration, and learned violence — the great theories of aggression from Freud to Bandura.",
+  "title": "Aggression: Theories"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Giving your seat to an elderly passenger without expecting thanks or reward.",
+    "point": "Prosocial behavior is any act meant to help others. Altruism is the purest form — helping with no expectation of reward, even at a cost to yourself. Most helping mixes selfish and selfless motives."
+   },
+   {
+    "example": "A mother who runs into a burning building to save her child without a second thought.",
+    "point": "Kin selection: evolution favors helping relatives because they share our genes. We feel strongest helping urges toward close family — Hamilton's rule says sacrifice makes genetic sense when it saves enough copies of our genes."
+   },
+   {
+    "example": "You help a colleague move house, trusting she will help you when you need it.",
+    "point": "Reciprocal altruism: we help non-relatives expecting future return. Gratitude, reputation, and guilt enforce the deal. Societies run on this unspoken exchange of favors."
+   },
+   {
+    "example": "Seeing a homeless child shivering in winter makes your chest ache and you buy him a blanket.",
+    "point": "Batson's empathy-altruism hypothesis: feeling true empathy for someone creates genuinely selfless motivation to help. Experiments show empathic concern produces helping even when escape is easy and no reward exists."
+   },
+   {
+    "example": "A bystander who feels sad watching news of flood victims donates to relief funds.",
+    "point": "Not all helping is pure: the negative-state relief model says we help to fix our own bad mood. Helping feels good and erases guilt — which is fine, because the victim still benefits."
+   },
+   {
+    "example": "Villages where everyone knows each other have higher helping rates than anonymous big cities.",
+    "point": "Helping depends on context: we help more when we feel competent, when the need is clear, when others are helping, and when we are in a good mood. Anonymity and rush crush helping."
+   },
+   {
+    "example": "Schools that assign students to community service produce adults who volunteer more for life.",
+    "point": "To grow prosocial behavior: model helping (children copy generous adults), teach empathy early, praise kindness specifically, and create cultures where helping is the visible norm."
+   }
+  ],
+  "slug": "prosocial-behavior-and-altruism",
+  "summary": "Why do we help strangers? The science of kindness — from evolution's logic to Batson's empathy experiments.",
+  "title": "Prosocial Behavior and Altruism"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A woman is attacked on a busy street while dozens watch — and nobody calls for help.",
+    "point": "The bystander effect: the more witnesses to an emergency, the less likely any one person is to help. Darley and Latane discovered it after the 1964 murder of Kitty Genovese, witnessed by many who did not intervene."
+   },
+   {
+    "example": "In a crowded train, everyone assumes someone else has already reported the fainted passenger.",
+    "point": "Diffusion of responsibility is the core cause: each person feels less personal duty when others are present. 'Someone else will do it' becomes everyone's excuse — so no one does it."
+   },
+   {
+    "example": "Smoke fills a room, but because two confederates stay calm, the real participant ignores it too.",
+    "point": "Pluralistic ignorance: in ambiguous situations we look to others for cues. If everyone looks calm, we conclude nothing is wrong — even as each person privately worries. Calm faces can be dangerously misleading."
+   },
+   {
+    "example": "A man hesitates to help a fallen stranger, fearing he will look foolish if it is not a real emergency.",
+    "point": "Audience inhibition: we fear embarrassment more than we admit. Helping risks looking incompetent; not helping is invisible. Evaluation apprehension freezes good intentions."
+   },
+   {
+    "example": "Darley and Latane's five steps: notice the event, interpret it as an emergency, take responsibility, know how to help, and act.",
+    "point": "Helping requires clearing five hurdles, and failure at any one stops it. The model explains exactly where intervention breaks down — and how to fix each step."
+   },
+   {
+    "example": "A drowning person who shouts 'You in the red shirt — call an ambulance!' is far more likely to be rescued.",
+    "point": "To beat the effect: point at a specific person and give a direct order. Singling someone out destroys diffusion of responsibility. Being trained in first aid also removes the 'I don't know how' barrier."
+   },
+   {
+    "example": "Cities that teach schoolchildren emergency response see higher real-world helping rates.",
+    "point": "The effect is not destiny: education, clear emergency roles, and cultures that celebrate helpers all raise intervention. Knowing about the bystander effect makes you personally less vulnerable to it."
+   }
+  ],
+  "slug": "bystander-effect",
+  "summary": "Why crowds watch and nobody helps. Darley and Latane's shocking discovery, the five steps to helping, and how to break the spell.",
+  "title": "Bystander Effect"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "You become friends with the neighbor you pass every morning, not the stranger across town.",
+    "point": "Proximity is the strongest predictor of attraction: we like people we encounter often. College dorm studies show friendships form with next-door neighbors far more than distant ones. Nearness creates opportunity, and opportunity creates liking."
+   },
+   {
+    "example": "A new coworker you disliked at first becomes a close friend after months of daily lunch together.",
+    "point": "The mere exposure effect applies to people too: repeated contact alone increases liking. Familiar faces feel safe and predictable. This is why arranged meetings and regular classes spark unexpected friendships."
+   },
+   {
+    "example": "Two students who both love cricket, old films, and chai become inseparable within weeks.",
+    "point": "Similarity attracts: shared attitudes, values, and interests are the best predictors of lasting relationships. We assume similar people will understand and validate us — and we are usually right."
+   },
+   {
+    "example": "We rate kind people as more attractive and attractive people as kinder — the halo effect in action.",
+    "point": "Physical attractiveness matters most at first meeting, then fades in importance. The 'what is beautiful is good' stereotype makes us assume attractive people are also smarter and kinder — a bias worth knowing."
+   },
+   {
+    "example": "You find yourself liking the classmate who keeps complimenting your notes.",
+    "point": "Reciprocity of liking: we like those who like us. Discovering someone admires you boosts their attractiveness enormously. Flattery works — even when we suspect it might be strategic."
+   },
+   {
+    "example": "A tall, confident stranger seems appealing until he rudely insults the waiter.",
+    "point": "Warmth and competence are the two master traits we judge: is this person friendly, and is this person capable? Rudeness or arrogance can instantly erase physical appeal."
+   },
+   {
+    "example": "Long-distance couples who message daily often feel closer than nearby couples who barely talk.",
+    "point": "Modern attraction runs on communication quality, not just distance. Responsiveness — feeling heard and understood — now rivals proximity as the engine of closeness."
+   }
+  ],
+  "slug": "attraction-what-draws-us-together",
+  "summary": "Why do we like who we like? Proximity, similarity, beauty, and reciprocity — the proven ingredients of human attraction.",
+  "title": "Attraction: What Draws Us Together"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A couple married 30 years with deep trust but little excitement shows high intimacy and commitment, low passion.",
+    "point": "Sternberg's triangular theory says love has three components: intimacy (closeness and bonding), passion (romance and physical desire), and commitment (decision to stay). Every love story is a different mix of these three."
+   },
+   {
+    "example": "Two strangers who feel instant chemistry on a first date are experiencing infatuation — passion alone.",
+    "point": "The seven types: liking (intimacy only), infatuation (passion only), empty love (commitment only), romantic love (intimacy + passion), companionate love (intimacy + commitment), fatuous love (passion + commitment), and consummate love (all three)."
+   },
+   {
+    "example": "A whirlwind romance that burns bright for six months then collapses was fatuous love — passion plus hasty commitment, no real intimacy.",
+    "point": "Fatuous love is the classic whirlwind romance: intense passion plus quick commitment without deep knowing. It feels like destiny but often fades when reality arrives."
+   },
+   {
+    "example": "Best friends who marry after years of trust share companionate love — deep affection without wild passion.",
+    "point": "Companionate love sustains long marriages: intimacy plus commitment after passion cools. Many happy couples live here — and research shows it predicts lasting satisfaction better than passion does."
+   },
+   {
+    "example": "A couple together 20 years who still date weekly, share secrets, and choose each other daily approaches consummate love.",
+    "point": "Consummate love — all three components — is the ideal but hard to maintain. Sternberg warned it is like a beautiful garden: it needs constant tending or it fades back into simpler forms."
+   },
+   {
+    "example": "Passion naturally drops after 1–2 years as brain chemistry normalizes; couples who expect eternal fireworks feel cheated.",
+    "point": "The components change over time: passion peaks early and fades, intimacy grows slowly, commitment stabilizes. Understanding this curve prevents the myth that fading passion means fading love."
+   },
+   {
+    "example": "Couples who openly discuss which component needs work — more date nights, deeper talks — report higher satisfaction.",
+    "point": "The theory is practical: diagnose your relationship's triangle, then act. Missing intimacy? Share vulnerably. Missing passion? Create novelty. Missing commitment? Discuss the future explicitly."
+   }
+  ],
+  "slug": "sternbergs-triangular-theory-of-love",
+  "summary": "Love is not one thing — it is three. Sternberg's triangle of intimacy, passion, and commitment, and the seven loves it creates.",
+  "title": "Sternberg's Triangular Theory of Love"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A securely attached woman trusts her partner, asks for support when stressed, and gives him space without panic.",
+    "point": "Hazan and Shaver (1987) extended infant attachment to adult romance. Secure adults (about 55%) are comfortable with closeness, trust partners, and handle conflict calmly. Their relationships are the happiest and longest-lasting."
+   },
+   {
+    "example": "An anxiously attached man texts his girlfriend ten times when she doesn't reply within an hour.",
+    "point": "Anxious-preoccupied adults (about 20%) crave closeness but fear abandonment. They seek constant reassurance, read threats into neutral behavior, and feel emotions intensely. Their neediness can strain the very bond they fear losing."
+   },
+   {
+    "example": "An avoidant woman ends relationships whenever they get serious, insisting she values her independence.",
+    "point": "Dismissive-avoidant adults (about 25%) prize independence and distrust closeness. They withdraw under stress, suppress feelings, and keep partners at arm's length. Fearful-avoidants want closeness but fear getting hurt."
+   },
+   {
+    "example": "Two anxious partners may cling and fight; an anxious-avoidant pair often traps in a pursue-withdraw cycle.",
+    "point": "Pairings matter: secure partners stabilize anyone, while anxious-avoidant couples often lock into painful cycles — one chasing, one fleeing. Knowing both styles explains fights that logic cannot."
+   },
+   {
+    "example": "A woman with an anxious style learns to self-soothe and communicate needs calmly instead of testing her partner.",
+    "point": "Styles are not life sentences. Security can be earned through healing relationships, therapy, and conscious practice. Attachment is a tendency, not a cage — awareness is the first step to change."
+   },
+   {
+    "example": "Childhood bonds with caregivers shape adult templates: consistent care builds security, inconsistency breeds anxiety, rejection breeds avoidance.",
+    "point": "The continuity is real but not absolute. Early attachment creates working models of love — expectations about whether others are trustworthy and whether we are worthy. Adult experiences rewrite these models slowly."
+   },
+   {
+    "example": "Couples who learn each other's attachment language fight less and repair faster.",
+    "point": "Practical use: name your style and your partner's, express needs directly instead of testing, and give the reassurance your partner's style requires. Attachment science turns mysterious fights into solvable patterns."
+   }
+  ],
+  "slug": "attachment-in-adult-relationships",
+  "summary": "Your childhood bond shapes your love life. How infant attachment becomes adult romance — the three styles and how to change them.",
+  "title": "Attachment in Adult Relationships"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Five strangers assigned to build a tower together start joking, arguing, and bonding within an hour.",
+    "point": "A group is two or more people who interact, share goals, and see themselves as a unit. Groups form for survival, belonging, and efficiency — humans are wired to cluster."
+   },
+   {
+    "example": "A new project team argues about roles in week one, then settles into smooth work by week three.",
+    "point": "Tuckman's stages: forming (polite orientation), storming (conflict over roles), norming (rules and cohesion emerge), performing (productive work), and adjourning (breakup). Skipping storming usually means problems surface later."
+   },
+   {
+    "example": "In every friend group, one person plans outings, another cracks jokes, and a third keeps secrets.",
+    "point": "Roles are expected behaviors for positions — formal (leader, secretary) or informal (joker, peacemaker). Clear roles reduce conflict; unclear roles breed it. We all play multiple roles across different groups."
+   },
+   {
+    "example": "A study group that silently agrees phones stay face-down during sessions.",
+    "point": "Norms are unwritten rules guiding behavior. They form quickly, enforce conformity, and punish violators with cold shoulders. Strong norms make groups predictable but can crush dissent."
+   },
+   {
+    "example": "Soldiers who would die for their unit, or fans who travel across the country for their team.",
+    "point": "Cohesion is the glue — attraction to the group and motivation to stay. Cohesive groups perform better and members are happier, but extreme cohesion can breed groupthink."
+   },
+   {
+    "example": "A committee where everyone agrees the plan is fine, while privately each member has doubts.",
+    "point": "Groups pressure members toward uniformity through social comparison and fear of rejection. The Asch experiments showed even strangers' opinions bend our judgment — imagine the pull of people we love."
+   },
+   {
+    "example": "A wise team leader assigns a devil's advocate and collects anonymous opinions before deciding.",
+    "point": "Healthy groups balance unity with dissent: encourage minority views, separate idea generation from evaluation, and rotate leadership. The best groups fight well — openly, respectfully, and early."
+   }
+  ],
+  "slug": "group-dynamics",
+  "summary": "How strangers become teams — and teams become tribes. Group formation, roles, norms, cohesion, and Tuckman's famous stages.",
+  "title": "Group Dynamics"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A cyclist pedals faster when racing beside others than when riding alone.",
+    "point": "Social facilitation: the presence of others boosts performance on easy or well-learned tasks. Triplett noticed it in 1898 watching cyclists race faster against competitors than against the clock — the first social psychology experiment."
+   },
+   {
+    "example": "A student who knows her speech perfectly delivers it brilliantly to a crowd — but stumbles through new material in front of others.",
+    "point": "The twist: audiences hurt performance on difficult or new tasks. This is social inhibition. The same crowd that energizes mastery disrupts learning — which is why practice should be private and performance public."
+   },
+   {
+    "example": "A chef chops vegetables faster with the kitchen team watching, but burns a brand-new recipe under the same gaze.",
+    "point": "Zajonc's drive theory explains both effects: others' presence raises arousal, and arousal strengthens our dominant response. For easy tasks the dominant response is correct; for hard tasks it is wrong."
+   },
+   {
+    "example": "A musician plays flawlessly at home but shakes during auditions, fearing the judges' verdict.",
+    "point": "Evaluation apprehension theory: we are aroused because we fear being judged. Supportive audiences energize; critical ones paralyze. Mere presence of others who cannot evaluate us has weaker effects."
+   },
+   {
+    "example": "Runners in marathons run faster when surrounded by fellow runners than when alone on the road.",
+    "point": "The effect needs no interaction — co-actors doing the same task are enough. Even virtual audiences and imagined observers can trigger mild facilitation."
+   },
+   {
+    "example": "Exam halls ban whispering partly because the crowd's presence already raises everyone's arousal.",
+    "point": "Practical lessons: perform practiced skills before audiences, learn new skills privately, and use co-working spaces for routine work. Athletes train alone and compete in stadiums for exactly this reason."
+   },
+   {
+    "example": "Cockroaches run mazes faster with other cockroaches watching — the effect is that primitive.",
+    "point": "Zajonc even found social facilitation in cockroaches, proving it is a basic biological response, not just human vanity. Arousal plus an audience is ancient wiring."
+   }
+  ],
+  "slug": "social-facilitation",
+  "summary": "Why crowds make us better at easy tasks and worse at hard ones. From Triplett's cyclists to Zajonc's arousal theory.",
+  "title": "Social Facilitation"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "In a group project, two members do all the work while three others coast and still share the grade.",
+    "point": "Social loafing: people exert less effort in groups than alone. Latane's shouting experiments showed individuals clapped and shouted less loudly in groups — yet believed they tried equally hard."
+   },
+   {
+    "example": "Eight people pulling a rope produce less than four times the force of two people — Ringelmann, 1913.",
+    "point": "The Ringelmann effect came first: rope-pulling teams underperformed the sum of individual efforts. Some loss is coordination, but much is motivation — people simply pull less hard when merged into a crowd."
+   },
+   {
+    "example": "A student who works hard alone slacks in group assignments because her contribution feels invisible.",
+    "point": "Why we loaf: dispensability (my effort won't matter), lack of evaluation (nobody can tell who did what), and diffusion of responsibility. When individual output is hidden, effort drops."
+   },
+   {
+    "example": "Workers loaf less when the task is interesting, the group is small, and members are friends.",
+    "point": "Loafing shrinks when tasks are meaningful, individual contributions are identifiable, the group matters to us, and we expect our teammates to work hard. Pride and accountability are the cures."
+   },
+   {
+    "example": "Teams that publish each member's contribution see loafing nearly vanish.",
+    "point": "The fix is identifiability: make every person's work visible and evaluated. Peer ratings, individual milestones within group projects, and small teams all restore effort."
+   },
+   {
+    "example": "In collectivist cultures, people loaf less on group tasks they see as serving their in-group.",
+    "point": "Culture moderates loafing: it is weaker where group identity is strong. Women also tend to loaf less than men in mixed groups — socialization shapes how much we coast."
+   },
+   {
+    "example": "A manager who sets clear individual targets inside team goals gets both teamwork and full effort.",
+    "point": "Design groups against loafing: keep teams small, assign distinct roles, evaluate individuals publicly, and make the mission inspiring. The best teams make every member feel essential."
+   }
+  ],
+  "slug": "social-loafing",
+  "summary": "Why people slack off in groups. The rope-pulling discovery, Latane's shouting studies, and how to make every member pull their weight.",
+  "title": "Social Loafing"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A normally polite student screams abuse at a football match while hidden in a chanting crowd.",
+    "point": "Deindividuation is losing self-awareness in groups: anonymity plus arousal dissolves personal identity into the crowd. Restraints fall, and people do things they never would alone — for good or ill."
+   },
+   {
+    "example": "Zimbardo's 1969 study: women in hoods and robes delivered stronger electric shocks than identifiable women.",
+    "point": "The classic evidence: Zimbardo found anonymous participants acted more aggressively. Uniforms, masks, darkness, and crowds all increase deindividuation by hiding identity."
+   },
+   {
+    "example": "Online trolls who would never insult someone face-to-face spew hatred behind anonymous usernames.",
+    "point": "The internet is a deindividuation machine: anonymity, invisibility, and delayed consequences. Cyberbullying, trolling, and pile-ons follow the same psychology as mob violence."
+   },
+   {
+    "example": "Soldiers in uniform, rioters with painted faces, and festival crowds dancing freely all show the merged self.",
+    "point": "It is not only destructive: deindividuation also fuels generosity in charity crowds, ecstasy at concerts, and courage in armies. Losing the self amplifies whatever the group norm is."
+   },
+   {
+    "example": "A teen who shoplifted with friends says, 'It didn't feel like me doing it.'",
+    "point": "The mechanism: reduced self-evaluation, weakened concern about others' judgment, and heightened responsiveness to immediate cues. The inner observer — conscience's voice — goes quiet."
+   },
+   {
+    "example": "Rioters photographed and identified afterward often express shock at their own behavior.",
+    "point": "Restoring individuation restores restraint: name tags, mirrors, cameras, and being addressed by name all reduce deindividuation. Accountability reawakens the self."
+   },
+   {
+    "example": "Event organizers who light venues brightly and keep crowds small see far less trouble.",
+    "point": "Prevention: reduce anonymity, keep groups accountable, and set strong prosocial norms — because a deindividuated crowd follows the loudest norm available, good or bad."
+   }
+  ],
+  "slug": "deindividuation",
+  "summary": "When crowds swallow the self. Zimbardo's hooded experiments, online trolls, and why anonymity unleashes both cruelty and ecstasy.",
+  "title": "Deindividuation"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Kennedy's advisors unanimously approved the Bay of Pigs invasion — a plan each privately doubted.",
+    "point": "Groupthink, named by Irving Janis in 1972, is when the desire for harmony overrides realistic thinking. Cohesive groups under stress suppress dissent, and bad decisions feel unanimous. The Bay of Pigs fiasco is the textbook case."
+   },
+   {
+    "example": "NASA engineers' warnings about O-rings were silenced before the Challenger launch killed seven astronauts.",
+    "point": "The Challenger disaster: engineers knew the risks, but group pressure and launch fever buried their doubts. Janis showed the same pattern in Vietnam War escalation and Pearl Harbor."
+   },
+   {
+    "example": "Members convince themselves 'we all agree' while privately doubting — the illusion of unanimity.",
+    "point": "The eight symptoms: illusion of invulnerability, unquestioned belief in the group's morality, rationalizing warnings away, stereotyping opponents, self-censorship, illusion of unanimity, direct pressure on dissenters, and mindguards who shield the group from bad news."
+   },
+   {
+    "example": "A dissenter who speaks up is told, 'Don't be negative — we're a team.'",
+    "point": "Self-censorship is the engine: members silence their own doubts to preserve harmony. Each silent doubter assumes everyone else agrees, multiplying the illusion."
+   },
+   {
+    "example": "A startup where the founder's idea can never be questioned burns through funding on a doomed product.",
+    "point": "Groupthink thrives where leaders state preferences early, groups are insulated from outside views, and stress is high. Homogeneous, cohesive teams are most at risk."
+   },
+   {
+    "example": "Kennedy fixed his process after the Bay of Pigs by assigning his brother to argue every side.",
+    "point": "Janis's cures: leaders withhold opinions until the end, assign a devil's advocate, split into subgroups, bring in outside experts, and hold second-chance meetings to air lingering doubts."
+   },
+   {
+    "example": "A hospital team that reviews every error openly, without blame, makes fewer fatal mistakes.",
+    "point": "Modern antidotes: psychological safety, anonymous input, premortems (imagining the plan failed and asking why), and diverse teams. The goal is not less cohesion — it is cohesion plus courage."
+   }
+  ],
+  "slug": "groupthink-in-depth",
+  "summary": "When smart teams make stupid decisions together. Janis's eight symptoms, the Bay of Pigs and Challenger disasters, and proven cures.",
+  "title": "Groupthink in Depth"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "In a library everyone whispers — nobody posted a sign, but you instantly lower your voice.",
+    "point": "Social norms are unwritten rules about acceptable behavior. You learned the library norm without being taught. Norms guide everything from queueing to dress codes, enforced by approval and embarrassment."
+   },
+   {
+    "example": "A hotel sign saying 'most guests reuse towels' works better than 'please save the environment.'",
+    "point": "Cialdini's distinction: descriptive norms describe what people do ('most guests reuse towels'); injunctive norms prescribe what people should do ('please conserve water'). Descriptive norms are often more persuasive — we copy the herd."
+   },
+   {
+    "example": "Sherif's autokinetic experiment: strangers' guesses about a light's movement converged into a group norm that persisted for generations of participants.",
+    "point": "Sherif (1936) showed norms form spontaneously: in a dark room, individuals' wildly different judgments of a stationary light converged when deciding together. The agreed norm then passed to new members like culture itself."
+   },
+   {
+    "example": "A 'no litter' sign in an already clean park works; the same sign in a trashed park backfires.",
+    "point": "Norms need matching environments: highlighting a good norm in a bad setting reminds people that misbehavior is common. Clean the park first, then post the sign."
+   },
+   {
+    "example": "Teenagers who believe 'everyone drinks' drink more — even when most peers actually don't.",
+    "point": "Pluralistic ignorance creates false norms: everyone privately rejects a behavior but believes everyone else accepts it. Correcting the misperception alone reduces drinking on campuses."
+   },
+   {
+    "example": "Wearing shoes indoors is rude in Pakistan but normal in America — same act, opposite norms.",
+    "point": "Norms vary by culture, and violating them brings confusion or hostility. Travelers, immigrants, and newcomers must decode invisible rules — which is why culture shock feels so disorienting."
+   },
+   {
+    "example": "A neighborhood that publicly celebrates its cleanest street keeps it clean for years.",
+    "point": "To build good norms: make the desired behavior visible, reward it publicly, and let respected members model it. People follow norms they see, not norms they are told."
+   }
+  ],
+  "slug": "social-norms",
+  "summary": "The invisible rules running your life. How norms form, Sherif's light experiment, and why 'everyone does it' is so powerful.",
+  "title": "Social Norms"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A mother who is also a manager feels torn when her child is sick on a big presentation day.",
+    "point": "A social role is the set of behaviors expected from a position — mother, student, boss. Roles guide us efficiently but can clash: role conflict strikes when two roles demand opposite things at once."
+   },
+   {
+    "example": "A police officer ordered to arrest a protesting friend feels the uniform and the friendship pulling apart.",
+    "point": "Role conflict is between roles; role strain is tension within one role — a teacher torn between disciplining and befriending students. Both are universal sources of stress."
+   },
+   {
+    "example": "In Zimbardo's Stanford Prison Experiment, students assigned as guards became cruel within days.",
+    "point": "The Stanford Prison Experiment (1971) is roles' darkest lesson: random students internalized guard and prisoner roles so deeply the study was stopped in six days. Situations and roles can overpower personality."
+   },
+   {
+    "example": "A new bride in a traditional household suddenly faces expectations about cooking, dress, and obedience she never had before.",
+    "point": "Role transitions reshape identity: marriage, parenthood, or a first job install whole new scripts. Role ambiguity — not knowing what is expected — makes transitions anxious."
+   },
+   {
+    "example": "Doctors are expected to be calm and certain even when they feel fear and doubt inside.",
+    "point": "Some roles demand emotional labor — displaying feelings you don't feel. Service workers must smile, bill collectors must sound stern. Sustained acting drains and burns out."
+   },
+   {
+    "example": "A retired professor who keeps introducing himself by his old title struggles to answer 'who am I now?'",
+    "point": "Losing a central role — through retirement, divorce, or graduation — can trigger identity crisis. Healthy adaptation means building new roles before old ones end."
+   },
+   {
+    "example": "Companies that write clear role descriptions and train newcomers see less conflict and faster adjustment.",
+    "point": "Managing roles well: clarify expectations early, negotiate conflicting demands openly, and allow role distance — small rebellions that signal 'I am more than this role.' Roles serve us best when we play them consciously."
+   }
+  ],
+  "slug": "social-roles",
+  "summary": "The parts we play — mother, student, boss — and how they shape us. Role conflict, role strain, and the Stanford Prison Experiment.",
+  "title": "Social Roles"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "You dress sharper, smile more, and rehearse answers before a job interview.",
+    "point": "Self-presentation is managing the impression others form of us. Goffman (1959) called social life dramaturgy: we are actors on stages, performing roles for audiences, with backstage areas where we drop the act."
+   },
+   {
+    "example": "On Instagram you post the perfect birthday photo, hiding the fifty blurred attempts.",
+    "point": "Impression management tactics: self-promotion (showing competence), ingratiation (flattery and favors), exemplification (looking moral), supplication (looking needy), and intimidation (looking dangerous). We mix them by situation."
+   },
+   {
+    "example": "A student laughs at the professor's weak joke and agrees with opinions she privately doubts.",
+    "point": "Ingratiation — flattery, agreement, and favors — reliably wins liking. It works even when targets suspect manipulation, because attention feels good. But overdone flattery triggers suspicion."
+   },
+   {
+    "example": "Applicants who slightly exaggerate achievements in interviews often get hired over modest equals.",
+    "point": "Self-promotion boosts perceived competence but risks seeming arrogant. The sweet spot: claim credit with evidence, share credit generously, and let others discover your strengths."
+   },
+   {
+    "example": "A teenager acts tough with friends but cries freely at home — front stage versus backstage.",
+    "point": "Goffman's regions: front stage is where we perform (classroom, office); backstage is where we relax and prepare (home, close friends). Social media collapsed the two, creating constant performance anxiety."
+   },
+   {
+    "example": "A politician caught in scandal stages a tearful apology with family beside him.",
+    "point": "When performances fail, we use damage control: excuses, justifications, and apologies. Effective apologies admit fault fully, show remorse, and offer repair — partial apologies backfire."
+   },
+   {
+    "example": "People who present themselves authentically — flaws included — are trusted more than perfect performers.",
+    "point": "The paradox: strategic vulnerability beats perfection. Admitting small flaws (the pratfall effect) makes competent people more likable. Authenticity is the ultimate impression strategy."
+   }
+  ],
+  "slug": "self-presentation",
+  "summary": "Life as theater — Goffman's dramaturgy, the tactics we use to shape impressions, and why authenticity wins.",
+  "title": "Self-Presentation"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A student who feels average looks at the class topper and feels worse — then looks at struggling classmates and feels better.",
+    "point": "Festinger's social comparison theory (1954): when objective measures are missing, we evaluate ourselves against others. We constantly ask 'how am I doing?' and other people are the yardstick."
+   },
+   {
+    "example": "An amateur runner who trains with faster athletes improves rapidly by chasing their pace.",
+    "point": "Upward comparison — measuring against those better than us — can inspire and motivate. Athletes, students, and artists all grow by studying their superiors. But it can also breed envy and inadequacy."
+   },
+   {
+    "example": "After a bad exam, thinking 'at least I passed, unlike those who failed' restores your mood.",
+    "point": "Downward comparison — measuring against those worse off — protects self-esteem. After setbacks we instinctively look down the ladder. It soothes but can breed complacency."
+   },
+   {
+    "example": "Teenagers who compare their real bodies to edited influencer photos develop body image problems.",
+    "point": "Social media weaponized comparison: we compare our behind-the-scenes with everyone's highlight reel. Upward comparison to curated perfection reliably lowers self-esteem and life satisfaction."
+   },
+   {
+    "example": "A new employee compares her salary only with colleagues at her level, not with the CEO.",
+    "point": "We compare with similar others — same age, field, background. Comparisons with the wildly different feel irrelevant. Reference groups define what 'doing well' means."
+   },
+   {
+    "example": "Olympic bronze medalists are happier than silver medalists — bronze compares down to fourth place, silver compares up to gold.",
+    "point": "The medal paradox proves comparison's power: objective rank matters less than the direction of comparison. Happiness is relative, not absolute."
+   },
+   {
+    "example": "Athletes taught to compare today's self with yesterday's self improve faster and stay happier.",
+    "point": "Healthy comparison: compete with your past self, choose inspiring (not crushing) targets, limit social media exposure, and remember every comparison is edited. The only fair race is against who you were."
+   }
+  ],
+  "slug": "social-comparison-theory",
+  "summary": "How am I doing? We answer by measuring against others. Festinger's theory, upward vs downward comparison, and the social media trap.",
+  "title": "Social Comparison Theory"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A doctor persuades you with detailed test results and logic — you think carefully and change your mind for good.",
+    "point": "Petty and Cacioppo's elaboration likelihood model (1986): persuasion travels two routes. The central route uses logic and evidence; it works when people are motivated and able to think, and it creates lasting change."
+   },
+   {
+    "example": "A celebrity holding a perfume bottle makes you want it, though she says nothing about the scent.",
+    "point": "The peripheral route uses shortcuts — attractiveness, music, slogans, emotions. It works when people are distracted or uninterested, and the change fades quickly. Most advertising lives here."
+   },
+   {
+    "example": "The same argument persuades you when rested but bounces off when you are exhausted.",
+    "point": "Which route wins depends on elaboration likelihood: motivation (does it matter to me?) times ability (can I understand it?). High both means central processing; low either means peripheral."
+   },
+   {
+    "example": "A politician's moving story about one sick child beats a page of healthcare statistics.",
+    "point": "Vivid, emotional messages grab the peripheral route; strong arguments win the central route. Smart persuaders match the route to the audience's mindset."
+   },
+   {
+    "example": "Ads repeated just enough feel true — but overplayed ads breed irritation.",
+    "point": "Repetition boosts persuasion up to a point (familiarity feels true), then backfires. Three exposures is the classic advertising sweet spot."
+   },
+   {
+    "example": "Warnings from a trusted doctor change behavior more than identical warnings from a stranger.",
+    "point": "Source matters peripherally: credibility, attractiveness, and similarity all persuade. We accept claims from liked sources with far less scrutiny."
+   },
+   {
+    "example": "To resist manipulation, ask: am I being given reasons or just vibes? Pause, seek evidence, and notice emotional pressure.",
+    "point": "Defense against persuasion: recognize which route is being used, demand central-route evidence for important decisions, and beware manufactured urgency. Forewarned audiences resist much better."
+   }
+  ],
+  "slug": "persuasion-central-vs-peripheral-routes",
+  "summary": "Two roads to changing minds — logic vs shortcuts. Petty and Cacioppo's elaboration likelihood model explained simply.",
+  "title": "Persuasion: Central vs Peripheral Routes"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A charity first asks you to wear a small pin, then later asks for a donation — and you give.",
+    "point": "Foot-in-the-door: agree to a small request first, and you are far more likely to agree to a bigger one later. Freedman and Fraser (1966) showed homeowners who displayed a small sign later accepted a huge billboard. We stay consistent with our past actions."
+   },
+   {
+    "example": "A fundraiser asks for $500, you refuse, then she asks for $50 — which suddenly seems reasonable.",
+    "point": "Door-in-the-face: start with an outrageous request, then retreat to the real one. Cialdini's studies showed the second request feels like a concession, triggering our urge to reciprocate. Refusal guilt does the rest."
+   },
+   {
+    "example": "A car dealer agrees on a price, then adds fees after you've mentally bought the car — and you still sign.",
+    "point": "Low-balling: secure commitment with an attractive offer, then raise the cost. Once we have decided and imagined ownership, walking away feels like a loss. The initial yes traps us."
+   },
+   {
+    "example": "'This pen is $20 — but wait, I'll include a free notebook!' The bonus makes refusal harder.",
+    "point": "That's-not-all: sweeten the deal before the customer responds. The added bonus feels like a gift, activating reciprocity. Infomercials run entirely on this technique."
+   },
+   {
+    "example": "A salesperson who remembers your name and brings you coffee gets more yeses.",
+    "point": "Liking and rapport multiply every technique: we comply more with people we find attractive, similar, or complimentary. Compliance professionals manufacture liking deliberately."
+   },
+   {
+    "example": "Limited-time offers and 'only 3 left' warnings short-circuit careful thought.",
+    "point": "Scarcity and urgency: we want what is rare and fear missing out. Countdown timers and low-stock warnings push us from deliberation to impulse."
+   },
+   {
+    "example": "Knowing the techniques is the best defense: pause before big yeses, separate the request from the relationship, and ask 'would I agree if asked this first?'",
+    "point": "Resisting compliance: recognize the pattern, take time before deciding, and judge each request on its own merits. Legitimate requests survive scrutiny — manipulative ones depend on momentum."
+   }
+  ],
+  "slug": "compliance-techniques",
+  "summary": "The tricks that make you say yes. Foot-in-the-door, door-in-the-face, low-balling, and how to resist them.",
+  "title": "Compliance Techniques"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A lonely newcomer in a city is befriended, love-bombed, and slowly drawn into an isolated group.",
+    "point": "Cults are high-control groups that exploit normal needs: belonging, meaning, and certainty. Recruits are rarely crazy — they are usually idealistic, lonely, or in life transitions. Vulnerability, not weakness, is the entry point."
+   },
+   {
+    "example": "New members are showered with affection and attention, then gradually cut off from family and old friends.",
+    "point": "Love-bombing opens the trap: intense warmth and acceptance hook the recruit. Then isolation follows — outside contacts are reframed as toxic or unenlightened, removing reality checks."
+   },
+   {
+    "example": "Members surrender money, sleep, and decisions to the leader, convinced it is spiritual growth.",
+    "point": "Milieu control: the group regulates information, sleep, diet, and relationships. Exhaustion and information starvation weaken critical thinking. Total environments produce total compliance."
+   },
+   {
+    "example": "A leader who claims divine insight cannot be questioned — doubt is framed as spiritual failure.",
+    "point": "Charismatic authority is the engine: the leader's special status makes questioning feel like betrayal. Sacred texts, secret teachings, and apocalyptic urgency cement obedience."
+   },
+   {
+    "example": "Small commitments — attending a weekend retreat — escalate into surrendered bank accounts and arranged marriages.",
+    "point": "Graduated commitment uses foot-in-the-door at scale: each small yes makes the next bigger yes easier. By the time demands turn extreme, leaving would mean admitting years of error."
+   },
+   {
+    "example": "Former members often need months to rebuild independent judgment after leaving.",
+    "point": "Exit is hard: sunk costs, severed outside ties, and fear of the outside world trap members. Recovery requires patience, outside support, and rebuilding an independent identity."
+   },
+   {
+    "example": "Teach critical thinking, protect access to diverse information, and keep outside relationships strong — the best inoculation.",
+    "point": "Prevention and help: maintain outside friendships, guard sleep and information diet, and question any group that forbids doubt. For families, patient non-judgmental contact keeps the door open for leavers."
+   }
+  ],
+  "slug": "cults-and-extreme-persuasion",
+  "summary": "How ordinary people get captured by extreme groups. Love-bombing, isolation, charismatic leaders — and how to resist.",
+  "title": "Cults and Extreme Persuasion"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A captain who stays calm in crisis, takes responsibility for failures, and credits the team for wins.",
+    "point": "Leadership is influencing a group toward goals. Early trait theories hunted for born-leader qualities — confidence, intelligence, integrity — but traits alone predict weakly. Context matters as much as character."
+   },
+   {
+    "example": "A coach who drills strictly before finals but jokes and encourages during practice.",
+    "point": "Behavioral theories found two key styles: task-oriented (structuring work) and people-oriented (supporting members). The best leaders flex between them — driving results while caring for people."
+   },
+   {
+    "example": "A strict commander thrives in battle but flops running a creative studio.",
+    "point": "Fiedler's contingency theory: effectiveness depends on fit between style and situation. Task-focused leaders excel when control is very high or very low; people-focused leaders shine in the middle."
+   },
+   {
+    "example": "A CEO who paints a thrilling vision of the future and inspires employees to exceed themselves.",
+    "point": "Transformational leaders inspire through vision, charisma, and personal growth — producing the highest performance and loyalty. Transactional leaders trade rewards for effort: effective but uninspiring."
+   },
+   {
+    "example": "A manager who asks the team for input before deciding gets stronger commitment to the plan.",
+    "point": "Democratic leaders build buy-in; autocratic leaders decide fast in crises. Research favors democratic styles for satisfaction and creativity, autocratic for emergencies requiring speed."
+   },
+   {
+    "example": "Women leaders are often rated as more effective yet face backlash for the same assertiveness praised in men.",
+    "point": "Gender and leadership: women tend toward democratic, transformational styles and perform slightly better on average — yet face double binds, judged as too soft or too aggressive with no middle ground."
+   },
+   {
+    "example": "The best leaders develop others, share power, and adapt their style to each person and moment.",
+    "point": "Modern leadership is learnable: emotional intelligence, active listening, and situational flexibility beat any fixed style. Leadership is a set of behaviors, not a personality type."
+   }
+  ],
+  "slug": "leadership-in-groups",
+  "summary": "What makes a great leader? From born-leader myths to transformational visionaries — the science of leading groups.",
+  "title": "Leadership in Groups"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Two roommates fight over cleaning duties until resentment poisons the whole friendship.",
+    "point": "Conflict is perceived incompatibility of goals. It ranges from mild disagreements to open hostility. Handled well, conflict sparks creativity; handled badly, it destroys relationships."
+   },
+   {
+    "example": "Siblings competing for a parent's attention, departments competing for budget — same psychology, different arenas.",
+    "point": "Common causes: scarce resources, incompatible goals, poor communication, and personality clashes. Most conflicts mix several causes — money fights are often really about respect."
+   },
+   {
+    "example": "Two friends both want the last concert ticket and end up shouting instead of talking.",
+    "point": "Destructive patterns: competing (win-lose), avoiding (lose-lose), and accommodating (one side surrenders). Each has its place — competing suits emergencies, avoiding suits trivial issues."
+   },
+   {
+    "example": "Divorcing parents who focus on the children's needs rather than punishing each other.",
+    "point": "Collaboration seeks win-win: both sides' needs met through creative problem-solving. It takes time and trust but produces the most durable agreements."
+   },
+   {
+    "example": "A skilled mediator helps warring neighbors agree on quiet hours by uncovering the real needs beneath positions.",
+    "point": "Principled negotiation (Fisher and Ury): separate people from problems, focus on interests not positions, invent options for mutual gain, and use objective criteria. 'Getting to Yes' made this famous."
+   },
+   {
+    "example": "A union and management settle a strike when both realize a long shutdown bankrupts everyone.",
+    "point": "BATNA — your best alternative to a negotiated agreement — is your real power. The side with the better walk-away option wins. Always know yours before negotiating."
+   },
+   {
+    "example": "Countries that trade together rarely go to war — economic ties make conflict too costly.",
+    "point": "Lasting peace needs structural fixes: fair procedures, shared goals, and interdependence. Contact alone doesn't end conflict; cooperative contact with equal status does."
+   }
+  ],
+  "slug": "conflict-and-negotiation",
+  "summary": "Why we fight and how to make peace. Conflict styles, principled negotiation, and what actually ends disputes.",
+  "title": "Conflict and Negotiation"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Two rival departments forced to build a product together become allies within weeks.",
+    "point": "Sherif's Robbers Cave proved cooperation heals division: competing groups turned hostile, but superordinate goals — shared aims needing both sides — rebuilt friendship. Nothing unites like a common enemy or common project."
+   },
+   {
+    "example": "Teammates who pass to each other win more than ball-hogs chasing personal glory.",
+    "point": "Cooperation outperforms competition on complex tasks: pooled knowledge, shared effort, and mutual support beat solo brilliance. But competition wins for simple, speed-based tasks."
+   },
+   {
+    "example": "Two prisoners who both stay silent go free sooner — but each fears the other will betray them.",
+    "point": "The prisoner's dilemma captures cooperation's trap: mutual cooperation pays best, but each side fears exploitation. Trust — or enforceable agreements — unlocks the win-win."
+   },
+   {
+    "example": "Countries that cut carbon together all benefit; each alone is tempted to pollute and free-ride.",
+    "point": "Social dilemmas scale up: climate change, overfishing, and traffic are all prisoner's dilemmas. Solutions include regulation, reputation systems, and making cooperation visible."
+   },
+   {
+    "example": "In repeated games, tit-for-tat — cooperate first, then mirror the other — beats all fancier strategies.",
+    "point": "Axelrod's tournaments found the winning strategy is simple: start nice, retaliate once against betrayal, forgive fast. Nice, clear, and retaliatory beats pure aggression and pure trust."
+   },
+   {
+    "example": "Study groups where members teach each other outperform groups of solo studiers.",
+    "point": "In education and work, structured cooperation (clear roles, shared rewards, individual accountability) boosts learning and morale. Unstructured 'group work' without these often flops."
+   },
+   {
+    "example": "Design systems where cooperation pays: shared goals, visible contributions, and swift consequences for cheating.",
+    "point": "Building cooperation: create superordinate goals, reward teams not just stars, punish defection fairly, and nurture trust through repeated interaction. Cooperation is engineered, not wished for."
+   }
+  ],
+  "slug": "cooperation-and-competition",
+  "summary": "When working together beats fighting. Sherif's superordinate goals, the prisoner's dilemma, and how to engineer cooperation.",
+  "title": "Cooperation and Competition"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "Americans praise standing out; Japanese praise fitting in — both feel natural to their people.",
+    "point": "The biggest cultural split is individualism versus collectivism. Individualist cultures (US, Western Europe) prize independence and personal achievement; collectivist cultures (East Asia, Pakistan, Latin America) prize harmony and group loyalty."
+   },
+   {
+    "example": "American students explain success as talent; Japanese students explain it as effort.",
+    "point": "Attribution differs by culture: individualists blame persons, collectivists weigh situations and contexts. The fundamental attribution error is weaker where interdependent thinking rules."
+   },
+   {
+    "example": "Asch-style conformity runs higher in collectivist countries, where harmony outranks self-expression.",
+    "point": "Conformity, obedience, and self-presentation all shift with culture. What looks like 'peer pressure' in one culture is 'respect for harmony' in another — same behavior, different meaning."
+   },
+   {
+    "example": "Arranged marriages, common in collectivist cultures, show equal or higher satisfaction than love marriages on average.",
+    "point": "Love and family differ too: collectivist cultures involve families in mate choice and value companionate love; individualist cultures idealize romantic passion and personal choice."
+   },
+   {
+    "example": "A Pakistani student in America feels rude refusing food but also rude accepting too quickly — caught between norms.",
+    "point": "Bicultural people code-switch: they think more individualistically in English and more collectively in their mother tongue. Culture is a toolkit, not a cage."
+   },
+   {
+    "example": "Multinational teams that discuss norms explicitly outperform those that assume shared rules.",
+    "point": "Working across cultures: learn the other norm system, explain your own, and create shared team norms. Cultural intelligence beats assuming everyone thinks like you."
+   },
+   {
+    "example": "Globalization blends cultures, but core values change slowly — expect fusion, not erasure.",
+    "point": "Cultures evolve: cities worldwide grow more individualist with wealth, yet deep values persist. The future is hybrid — global habits layered over local hearts."
+   }
+  ],
+  "slug": "culture-and-social-behavior",
+  "summary": "How culture rewires social behavior. Individualism vs collectivism and why the same act means different things worldwide.",
+  "title": "Culture and Social Behavior"
+ },
+ {
+  "category": "Social Psychology",
+  "points_json": [
+   {
+    "example": "A teen who posts a photo and refreshes for likes every two minutes, mood rising and crashing with the count.",
+    "point": "Social media runs on variable rewards — likes arrive unpredictably, like slot machines. This intermittent reinforcement is powerfully addictive, keeping us checking compulsively."
+   },
+   {
+    "example": "Scrolling through perfect vacations and bodies for an hour leaves you feeling your own life is dull.",
+    "point": "Curated feeds supercharge upward social comparison. We compare our unfiltered reality with everyone's filtered highlights, and self-esteem pays the price — especially for teens."
+   },
+   {
+    "example": "The anxiety that friends are having fun without you, driving compulsive checking.",
+    "point": "FOMO — fear of missing out — is manufactured by constant updates. It fragments attention, disrupts sleep, and correlates with anxiety and depression."
+   },
+   {
+    "example": "Your feed shows only opinions you already hold, making the other side seem crazy or evil.",
+    "point": "Algorithms build echo chambers: engagement rewards outrage and agreement, hiding opposing views. Polarization grows because we never meet the reasonable other side."
+   },
+   {
+    "example": "A rumor shared by thousands within minutes, believed because 'everyone is sharing it.'",
+    "point": "Misinformation spreads faster than truth — novelty and emotion drive shares. Social proof ('50k shares') substitutes for evidence. Viral does not mean true."
+   },
+   {
+    "example": "Anonymous accounts pile onto a teenager until she deletes everything and stops eating.",
+    "point": "Cyberbullying's wounds cut deep: anonymity, permanence, and audience size amplify harm. Victims face higher risks of anxiety, depression, and self-harm."
+   },
+   {
+    "example": "Turning off notifications, curating feeds, and scheduling check-times restores control and mood within weeks.",
+    "point": "Healthy use is possible: limit passive scrolling, follow inspiring accounts, disable manipulative notifications, and keep phones out of bedrooms. Use tools intentionally — connection, not comparison."
+   }
+  ],
+  "slug": "social-media-psychology",
+  "summary": "What apps do to your mind. Likes, FOMO, echo chambers, and cyberbullying — the psychology of social media explained.",
+  "title": "Social Media Psychology"
+ }
+]
