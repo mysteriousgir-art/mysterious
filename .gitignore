@@ -10,3 +10,4 @@ data/*.db-*
 # Built by `npm run build:netlify` during the Netlify build — never commit
 # (the 986kb bundle trips Netlify's exposed-secrets scanner).
 netlify/functions/api.js
+batch4/
