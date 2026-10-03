@@ -38,5 +38,1005 @@
     "file": "classical-vs-operant.png",
     "title": "Classical vs Operant Conditioning",
     "topic": "Learning"
+  },
+  {
+    "title": "The Neuron in Depth",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-1.png"
+  },
+  {
+    "title": "Action Potential Explained",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-2.png"
+  },
+  {
+    "title": "Synapses and Neurotransmission",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-3.png"
+  },
+  {
+    "title": "Serotonin: Mood and More",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-4.png"
+  },
+  {
+    "title": "Dopamine: Reward and Motivation",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-5.png"
+  },
+  {
+    "title": "Brain Lobes and Functions",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-6.png"
+  },
+  {
+    "title": "The Limbic System",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-7.png"
+  },
+  {
+    "title": "Neuroplasticity",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-8.png"
+  },
+  {
+    "title": "Split-Brain Research",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-9.png"
+  },
+  {
+    "title": "Brain Development",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-10.png"
+  },
+  {
+    "title": "Twin and Adoption Studies",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-11.png"
+  },
+  {
+    "title": "The Endocrine System",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-12.png"
+  },
+  {
+    "title": "Hormones and Behavior",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-13.png"
+  },
+  {
+    "title": "Hunger and Eating Regulation",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-14.png"
+  },
+  {
+    "title": "Sleep Neuroscience",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-15.png"
+  },
+  {
+    "title": "Emotion and the Brain",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-16.png"
+  },
+  {
+    "title": "Memory and the Brain",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-17.png"
+  },
+  {
+    "title": "Stress Physiology (HPA Axis)",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-18.png"
+  },
+  {
+    "title": "Brain Imaging Techniques",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-19.png"
+  },
+  {
+    "title": "Psychopharmacology Basics",
+    "topic": "Biological Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/bio-20.png"
+  },
+  {
+    "title": "Panic Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-1.png"
+  },
+  {
+    "title": "Social Anxiety Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-2.png"
+  },
+  {
+    "title": "Specific Phobias",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-3.png"
+  },
+  {
+    "title": "Major Depressive Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-4.png"
+  },
+  {
+    "title": "Bipolar I Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-5.png"
+  },
+  {
+    "title": "Schizophrenia",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-6.png"
+  },
+  {
+    "title": "Borderline Personality Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-7.png"
+  },
+  {
+    "title": "Antisocial Personality Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-8.png"
+  },
+  {
+    "title": "Narcissistic Personality Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-9.png"
+  },
+  {
+    "title": "OCD & ERP Treatment",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-10.png"
+  },
+  {
+    "title": "Trichotillomania & Excoriation",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-11.png"
+  },
+  {
+    "title": "PTSD Treatment",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-12.png"
+  },
+  {
+    "title": "Childhood Trauma",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-13.png"
+  },
+  {
+    "title": "Anorexia Nervosa",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-14.png"
+  },
+  {
+    "title": "ADHD Across the Lifespan",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-15.png"
+  },
+  {
+    "title": "Intellectual Disability",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-16.png"
+  },
+  {
+    "title": "Narcolepsy & Parasomnias",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-17.png"
+  },
+  {
+    "title": "Illness Anxiety Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-18.png"
+  },
+  {
+    "title": "Opioid Use Disorder",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-19.png"
+  },
+  {
+    "title": "Suicide Risk & Prevention",
+    "topic": "Clinical Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/clin-20.png"
+  },
+  {
+    "title": "Attention and Selective Focus",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-1.png"
+  },
+  {
+    "title": "Working Memory in Depth",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-2.png"
+  },
+  {
+    "title": "Long-Term Memory Systems",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-3.png"
+  },
+  {
+    "title": "Forgetting: Theories and Research",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-4.png"
+  },
+  {
+    "title": "False Memories and Eyewitness Testimony",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-5.png"
+  },
+  {
+    "title": "Amnesia: Case Studies (H.M.)",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-6.png"
+  },
+  {
+    "title": "Language Acquisition",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-7.png"
+  },
+  {
+    "title": "Bilingualism and the Brain",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-8.png"
+  },
+  {
+    "title": "Concepts and Categories",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-9.png"
+  },
+  {
+    "title": "Cognitive Biases Collection",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-10.png"
+  },
+  {
+    "title": "Creativity and Divergent Thinking",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-11.png"
+  },
+  {
+    "title": "Mental Imagery",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-12.png"
+  },
+  {
+    "title": "Executive Functions",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-13.png"
+  },
+  {
+    "title": "Metacognition: Thinking About Thinking",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-14.png"
+  },
+  {
+    "title": "Cognitive Load Theory",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-15.png"
+  },
+  {
+    "title": "Decision Making Under Risk",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-16.png"
+  },
+  {
+    "title": "Face Perception and Recognition",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-17.png"
+  },
+  {
+    "title": "Visual Illusions Explained",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-18.png"
+  },
+  {
+    "title": "Memory Improvement Techniques",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-19.png"
+  },
+  {
+    "title": "Artificial Intelligence and Human Thinking",
+    "topic": "Cognitive Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/cog-20.png"
+  },
+  {
+    "title": "Counseling vs Clinical vs Psychiatry",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-01.png"
+  },
+  {
+    "title": "Active Listening",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-02.png"
+  },
+  {
+    "title": "Reflecting Feelings",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-03.png"
+  },
+  {
+    "title": "Stages of the Counseling Process",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-04.png"
+  },
+  {
+    "title": "Therapeutic Alliance",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-05.png"
+  },
+  {
+    "title": "CBT Techniques",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-06.png"
+  },
+  {
+    "title": "DBT Skills",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-07.png"
+  },
+  {
+    "title": "ACT: Acceptance & Commitment",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-08.png"
+  },
+  {
+    "title": "Solution-Focused Brief Therapy",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-09.png"
+  },
+  {
+    "title": "Person-Centered Counseling",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-10.png"
+  },
+  {
+    "title": "Gestalt Therapy",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-11.png"
+  },
+  {
+    "title": "Couples Counseling",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-12.png"
+  },
+  {
+    "title": "Group Counseling",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-13.png"
+  },
+  {
+    "title": "Play Therapy",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-14.png"
+  },
+  {
+    "title": "Crisis Intervention",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-15.png"
+  },
+  {
+    "title": "Grief Counseling",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-16.png"
+  },
+  {
+    "title": "Trauma-Informed Counseling",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-17.png"
+  },
+  {
+    "title": "Addiction Counseling",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-18.png"
+  },
+  {
+    "title": "Counseling Ethics",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-19.png"
+  },
+  {
+    "title": "Confidentiality & Its Limits",
+    "topic": "Counseling & Therapy",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/coun-20.png"
+  },
+  {
+    "title": "Prenatal Development",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-01.png"
+  },
+  {
+    "title": "Newborn Reflexes and Abilities",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-02.png"
+  },
+  {
+    "title": "Infant Sensory Development",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-03.png"
+  },
+  {
+    "title": "Piaget: Sensorimotor Stage",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-04.png"
+  },
+  {
+    "title": "Piaget: Preoperational Stage",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-05.png"
+  },
+  {
+    "title": "Vygotsky's Sociocultural Theory",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-06.png"
+  },
+  {
+    "title": "Language Development Milestones",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-07.png"
+  },
+  {
+    "title": "Temperament in Infancy",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-08.png"
+  },
+  {
+    "title": "Play and Development",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-09.png"
+  },
+  {
+    "title": "Theory of Mind",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-10.png"
+  },
+  {
+    "title": "Childhood Friendships",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-11.png"
+  },
+  {
+    "title": "Parenting Styles (Baumrind)",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-12.png"
+  },
+  {
+    "title": "Puberty and the Adolescent Brain",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-13.png"
+  },
+  {
+    "title": "Identity Formation (Marcia)",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-14.png"
+  },
+  {
+    "title": "Peer Pressure in Adolescence",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-15.png"
+  },
+  {
+    "title": "Risk Taking in Teens",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-16.png"
+  },
+  {
+    "title": "Emerging Adulthood",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-17.png"
+  },
+  {
+    "title": "Transition to Parenthood",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-18.png"
+  },
+  {
+    "title": "Midlife: Crisis or Myth?",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-19.png"
+  },
+  {
+    "title": "Successful Aging",
+    "topic": "Developmental Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/dev-20.png"
+  },
+  {
+    "title": "The Biopsychosocial Model",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-1.png"
+  },
+  {
+    "title": "Health Belief Model",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-2.png"
+  },
+  {
+    "title": "Pain Psychology",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-3.png"
+  },
+  {
+    "title": "Sleep and Health",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-4.png"
+  },
+  {
+    "title": "Exercise and Mental Health",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-5.png"
+  },
+  {
+    "title": "Nutrition and Mood",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-6.png"
+  },
+  {
+    "title": "Social Support and Health",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-7.png"
+  },
+  {
+    "title": "Placebo and Nocebo Effects",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-8.png"
+  },
+  {
+    "title": "Type A Behavior and Heart Disease",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-9.png"
+  },
+  {
+    "title": "Mindfulness for Health",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-10.png"
+  },
+  {
+    "title": "Biofeedback",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-11.png"
+  },
+  {
+    "title": "Health Anxiety",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-12.png"
+  },
+  {
+    "title": "Somatization",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-13.png"
+  },
+  {
+    "title": "Treatment Adherence",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-14.png"
+  },
+  {
+    "title": "Doctor-Patient Communication",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-15.png"
+  },
+  {
+    "title": "Coping with Chronic Illness",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-16.png"
+  },
+  {
+    "title": "Smoking and Cessation",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-17.png"
+  },
+  {
+    "title": "Obesity Psychology",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-18.png"
+  },
+  {
+    "title": "Caregiver Stress",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-19.png"
+  },
+  {
+    "title": "Health Promotion Campaigns",
+    "topic": "Health Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/health-20.png"
+  },
+  {
+    "title": "What is I-O Psychology?",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-1.png"
+  },
+  {
+    "title": "Recruitment Strategies",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-2.png"
+  },
+  {
+    "title": "Selection Methods",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-3.png"
+  },
+  {
+    "title": "Employment Interviews",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-4.png"
+  },
+  {
+    "title": "Cognitive Ability Testing at Work",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-5.png"
+  },
+  {
+    "title": "Training and Development",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-6.png"
+  },
+  {
+    "title": "Performance Appraisal",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-7.png"
+  },
+  {
+    "title": "360-Degree Feedback",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-8.png"
+  },
+  {
+    "title": "Maslow at Work",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-9.png"
+  },
+  {
+    "title": "Herzberg's Two-Factor Theory",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-10.png"
+  },
+  {
+    "title": "Expectancy Theory (Vroom)",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-11.png"
+  },
+  {
+    "title": "Goal Setting Theory",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-12.png"
+  },
+  {
+    "title": "Equity Theory",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-13.png"
+  },
+  {
+    "title": "Job Satisfaction",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-14.png"
+  },
+  {
+    "title": "Transformational Leadership",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-15.png"
+  },
+  {
+    "title": "Servant Leadership",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-16.png"
+  },
+  {
+    "title": "Team Dynamics",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-17.png"
+  },
+  {
+    "title": "Organizational Culture",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-18.png"
+  },
+  {
+    "title": "Organizational Change Management",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-19.png"
+  },
+  {
+    "title": "Burnout at Work",
+    "topic": "Organizational Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/org-20.png"
+  },
+  {
+    "title": "Big Five: Openness",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-1.png"
+  },
+  {
+    "title": "Big Five: Conscientiousness",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-2.png"
+  },
+  {
+    "title": "Big Five: Extraversion",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-3.png"
+  },
+  {
+    "title": "Big Five: Agreeableness",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-4.png"
+  },
+  {
+    "title": "Big Five: Neuroticism",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-5.png"
+  },
+  {
+    "title": "Freud's Structural Model",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-6.png"
+  },
+  {
+    "title": "Defense Mechanisms",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-7.png"
+  },
+  {
+    "title": "Jung: Archetypes",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-8.png"
+  },
+  {
+    "title": "Humanistic Personality",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-9.png"
+  },
+  {
+    "title": "Bandura: Social-Cognitive",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-10.png"
+  },
+  {
+    "title": "Locus of Control",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-11.png"
+  },
+  {
+    "title": "Self-Efficacy",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-12.png"
+  },
+  {
+    "title": "The Dark Triad",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-13.png"
+  },
+  {
+    "title": "Narcissism: Two Faces",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-14.png"
+  },
+  {
+    "title": "Healthy vs Fragile Self-Esteem",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-15.png"
+  },
+  {
+    "title": "MBTI: Uses and Criticisms",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-16.png"
+  },
+  {
+    "title": "Identity and Self-Concept",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-17.png"
+  },
+  {
+    "title": "Culture and Personality",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-18.png"
+  },
+  {
+    "title": "Can Personality Change?",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-19.png"
+  },
+  {
+    "title": "Projective Tests",
+    "topic": "Personality Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/pers-20.png"
+  },
+  {
+    "title": "Variables: IV, DV and Confounds",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-01.png"
+  },
+  {
+    "title": "Hypotheses and Theories",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-02.png"
+  },
+  {
+    "title": "Experimental Design Basics",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-03.png"
+  },
+  {
+    "title": "Correlational Research",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-04.png"
+  },
+  {
+    "title": "Survey Methods",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-05.png"
+  },
+  {
+    "title": "Case Studies",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-06.png"
+  },
+  {
+    "title": "Naturalistic Observation",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-07.png"
+  },
+  {
+    "title": "Sampling Methods",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-08.png"
+  },
+  {
+    "title": "Random Assignment",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-09.png"
+  },
+  {
+    "title": "Internal Validity",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-10.png"
+  },
+  {
+    "title": "External Validity",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-11.png"
+  },
+  {
+    "title": "Reliability Types",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-12.png"
+  },
+  {
+    "title": "Central Tendency: Mean, Median, Mode",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-13.png"
+  },
+  {
+    "title": "Variability: Range, Variance, SD",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-14.png"
+  },
+  {
+    "title": "Normal Distribution",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-15.png"
+  },
+  {
+    "title": "Correlation Coefficients",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-16.png"
+  },
+  {
+    "title": "P-Values Explained Simply",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-17.png"
+  },
+  {
+    "title": "T-Tests Explained Simply",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-18.png"
+  },
+  {
+    "title": "Effect Sizes",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-19.png"
+  },
+  {
+    "title": "Research Ethics in Depth",
+    "topic": "Research Methods & Statistics",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/res-20.png"
+  },
+  {
+    "title": "Attribution Theory",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-1.png"
+  },
+  {
+    "title": "Fundamental Attribution Error",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-2.png"
+  },
+  {
+    "title": "Cognitive Dissonance",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-3.png"
+  },
+  {
+    "title": "Prejudice: Roots and Reduction",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-4.png"
+  },
+  {
+    "title": "Stereotypes and Stereotype Threat",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-5.png"
+  },
+  {
+    "title": "Bystander Effect",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-6.png"
+  },
+  {
+    "title": "Attraction: What Draws Us Together",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-7.png"
+  },
+  {
+    "title": "Sternberg's Triangular Theory of Love",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-8.png"
+  },
+  {
+    "title": "Social Facilitation",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-9.png"
+  },
+  {
+    "title": "Social Loafing",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-10.png"
+  },
+  {
+    "title": "Deindividuation",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-11.png"
+  },
+  {
+    "title": "Groupthink in Depth",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-12.png"
+  },
+  {
+    "title": "Social Norms",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-13.png"
+  },
+  {
+    "title": "Social Roles",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-14.png"
+  },
+  {
+    "title": "Social Comparison Theory",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-15.png"
+  },
+  {
+    "title": "Persuasion: Central vs Peripheral Routes",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-16.png"
+  },
+  {
+    "title": "Compliance Techniques",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-17.png"
+  },
+  {
+    "title": "Conflict and Negotiation",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-18.png"
+  },
+  {
+    "title": "Culture and Social Behavior",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-19.png"
+  },
+  {
+    "title": "Social Media Psychology",
+    "topic": "Social Psychology",
+    "url": "https://iuktbqydsvvbtzaysinm.supabase.co/storage/v1/object/public/infographics/soc-20.png"
   }
 ]
