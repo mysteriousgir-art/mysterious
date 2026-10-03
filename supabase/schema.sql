@@ -83,7 +83,16 @@ CREATE TABLE IF NOT EXISTS game_plays(
 CREATE TABLE IF NOT EXISTS rooms(
   slug TEXT PRIMARY KEY,
   name TEXT NOT NULL,
-  description TEXT NOT NULL
+  description TEXT NOT NULL,
+  requires_approval INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS room_members(
+  room_slug TEXT NOT NULL REFERENCES rooms(slug) ON DELETE CASCADE,
+  user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  approved INT NOT NULL DEFAULT 0,
+  requested_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY(room_slug, user_id)
 );
 
 CREATE TABLE IF NOT EXISTS messages(

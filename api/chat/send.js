@@ -33,8 +33,12 @@ module.exports = async function handler(req, res) {
 
     if (type === 'room') {
       const slug = String(id || '');
-      const { data: room } = await sb.from('rooms').select('slug').eq('slug', slug).maybeSingle();
+      const { data: room } = await sb.from('rooms').select('slug, requires_approval').eq('slug', slug).maybeSingle();
       if (!room) return u.send(res, 404, { error: 'room not found' });
+      if (room.requires_approval === 1 && fresh.is_admin !== 1) {
+        const { data: mem } = await sb.from('room_members').select('approved').eq('room_slug', slug).eq('user_id', me.id).maybeSingle();
+        if (!mem || mem.approved !== 1) return u.send(res, 403, { error: 'needs admin approval to send messages here' });
+      }
       const { data: ins, error } = await sb.from('messages')
         .insert({ kind: 'room', room_slug: slug, from_id: me.id, body })
         .select('id, created_at').single();

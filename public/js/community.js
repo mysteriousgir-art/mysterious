@@ -13,6 +13,7 @@ var lastId = 0;
 var renderedIds = null;     // Set of message ids already in the DOM
 var pendingTemp = null;     // {body, el} optimistic echo awaiting server echo
 var tempCounter = 0;
+var roomAccess = { requires_approval: 0, approved: null }; // current room's approval state
 
 function gate(){
   var g = document.getElementById("chat-gate");
@@ -125,7 +126,59 @@ function renderBlocks(){
 function openRoom(slug, name, description){
   view = {type:"room", id:slug, name:name || slug};
   setHead("🏠 " + (name || slug), description || "", false);
+  roomAccess = { requires_approval: 0, approved: null };
+  checkRoomAccess(slug);
   join();
+}
+
+/* ---------- room approval flow ---------- */
+async function checkRoomAccess(slug){
+  try{
+    var s = await api("/api/chat/rooms/join?slug=" + encodeURIComponent(slug));
+    roomAccess = { requires_approval: s.requires_approval ? 1 : 0, approved: s.approved };
+  }catch(e){
+    roomAccess = { requires_approval: 0, approved: 1 }; // fail open for reading; send API still enforces
+  }
+  applyAccessUI();
+}
+
+function applyAccessUI(){
+  var inputRow = document.getElementById("chat-input-row");
+  var gate = document.getElementById("room-gate");
+  if(!view || view.type !== "room"){ if(gate) gate.style.display = "none"; return; }
+  var needApproval = roomAccess.requires_approval === 1 && roomAccess.approved !== 1;
+  if(!needApproval){
+    inputRow.style.display = "";
+    if(gate) gate.style.display = "none";
+    return;
+  }
+  inputRow.style.display = "none";
+  if(!gate) return;
+  gate.style.display = "";
+  if(roomAccess.approved === 0){
+    gate.innerHTML = '<div class="alert alert-info" style="margin:0">⏳ <strong>Waiting for admin approval.</strong> You can read messages, but only approved members can send messages here.</div>';
+  }else{
+    gate.innerHTML = '<div class="alert alert-info" style="margin:0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">' +
+      '<span>🔒 <strong>Admin approval needed</strong> to send messages in this community.</span>' +
+      '<button class="btn btn-primary btn-sm" id="room-req-btn">Request permission</button></div>';
+    var b = document.getElementById("room-req-btn");
+    if(b) b.addEventListener("click", requestRoomAccess);
+  }
+}
+
+async function requestRoomAccess(){
+  if(!view || view.type !== "room") return;
+  var b = document.getElementById("room-req-btn");
+  if(b) b.disabled = true;
+  try{
+    var r = await api("/api/chat/rooms/join", {method:"POST", body:{slug: view.id}});
+    roomAccess.approved = r.approved;
+    applyAccessUI();
+    toast(r.approved === 1 ? "You can now send messages here 🌿" : "Request sent! The admin will review it soon. 🌿", "ok");
+  }catch(e){
+    toast(e.message, "err");
+    if(b) b.disabled = false;
+  }
 }
 
 async function openDM(userId){
@@ -175,7 +228,12 @@ async function join(){
   lastId = 0;
   renderedIds = new Set();
   document.getElementById("chat-body").innerHTML = '<div class="loading-box"><span class="spinner"></span> Joining…</div>';
-  document.getElementById("chat-input-row").style.display = "";
+  if(view.type === "dm"){
+    document.getElementById("chat-input-row").style.display = "";
+    document.getElementById("room-gate").style.display = "none";
+  }else{
+    applyAccessUI(); // rooms: input visibility follows approval state
+  }
   renderRooms(); renderConvs();
   try{
     var d = await api(historyUrl(0));

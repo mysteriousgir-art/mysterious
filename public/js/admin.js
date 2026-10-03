@@ -14,13 +14,14 @@ function showTab(name){
   document.querySelectorAll("[data-atab]").forEach(function(b){
     b.classList.toggle("active", b.getAttribute("data-atab") === name);
   });
-  ["dash","users","notes","quizzes","reports"].forEach(function(t){
+  ["dash","users","notes","quizzes","communities","reports"].forEach(function(t){
     document.getElementById("atab-" + t).style.display = t === name ? "" : "none";
   });
   if(name === "dash") loadDash();
   if(name === "users") loadUsers("");
   if(name === "notes") loadNotes();
   if(name === "quizzes") loadQuizzes();
+  if(name === "communities") loadCommunities();
   if(name === "reports") loadReports();
 }
 
@@ -483,6 +484,105 @@ async function loadReports(){
     });
   }catch(e){
     errorBox(box, "Could not load reports: " + e.message);
+  }
+}
+
+/* ================= COMMUNITIES ================= */
+async function loadCommunities(){
+  var box = document.getElementById("atab-communities");
+  loadingBox(box, "Loading communities…");
+  try{
+    var rooms = await api("/api/chat/rooms");
+    var html =
+      '<div class="card" style="margin-bottom:1.2rem"><h3 style="margin-top:0">➕ New community</h3>' +
+      '<div style="display:grid;gap:.7rem;max-width:32rem">' +
+      '<input class="input" id="nc-name" placeholder="Community name (e.g. Anxiety Support Circle)" maxlength="80">' +
+      '<textarea class="input" id="nc-desc" placeholder="Short description…" rows="2" maxlength="300"></textarea>' +
+      '<label style="display:flex;gap:.5rem;align-items:center;font-size:.92rem"><input type="checkbox" id="nc-approval" checked> Require admin approval before members can send messages</label>' +
+      '<div><button class="btn btn-primary" id="nc-create">Create community</button></div>' +
+      "</div></div>" +
+      '<div class="card" style="padding:0;overflow-x:auto"><table class="atable"><thead><tr>' +
+      "<th>Community</th><th>Approval</th><th>Pending</th><th>Action</th></tr></thead><tbody>" +
+      (rooms || []).map(function(r){
+        return "<tr>" +
+          '<td><strong>🏠 ' + esc(r.name) + "</strong><br>" +
+          '<span class="small">#' + esc(r.slug) + "</span>" +
+          (r.description ? '<br><span class="small">' + esc(r.description) + "</span>" : "") + "</td>" +
+          "<td>" + (r.requires_approval ? '<span class="chip terra">Approval on</span>' : '<span class="chip">Open</span>') + "</td>" +
+          '<td><button class="btn btn-ghost btn-sm" data-members="' + esc(r.slug) + '">View requests</button><div id="mem-' + esc(r.slug) + '" style="margin-top:.5rem"></div></td>' +
+          '<td><button class="btn btn-plain btn-sm" data-delroom="' + esc(r.slug) + '">Delete</button></td></tr>';
+      }).join("") + "</tbody></table></div>";
+    if(!(rooms || []).length) html += '<p class="small">No communities yet — create the first one above. 🌿</p>';
+    box.innerHTML = html;
+
+    document.getElementById("nc-create").addEventListener("click", async function(){
+      var name = document.getElementById("nc-name").value.trim();
+      var description = document.getElementById("nc-desc").value.trim();
+      var requires_approval = document.getElementById("nc-approval").checked;
+      if(!name){ toast("Please give the community a name.", "err"); return; }
+      this.disabled = true;
+      try{
+        await api("/api/chat/rooms", {method:"POST", body:{name:name, description:description, requires_approval:requires_approval}});
+        toast("Community created! 🎉", "ok");
+        loadCommunities();
+      }catch(e){ toast(e.message, "err"); this.disabled = false; }
+    });
+
+    box.querySelectorAll("[data-delroom]").forEach(function(b){
+      b.addEventListener("click", async function(){
+        var slug = b.getAttribute("data-delroom");
+        if(!window.confirm("Delete this community and all its messages?")) return;
+        b.disabled = true;
+        try{
+          await api("/api/chat/rooms?slug=" + encodeURIComponent(slug), {method:"DELETE"});
+          toast("Community deleted.", "ok");
+          loadCommunities();
+        }catch(e){ toast(e.message, "err"); b.disabled = false; }
+      });
+    });
+
+    box.querySelectorAll("[data-members]").forEach(function(b){
+      b.addEventListener("click", async function(){
+        var slug = b.getAttribute("data-members");
+        var target = document.getElementById("mem-" + slug);
+        b.disabled = true;
+        try{
+          var members = await api("/api/chat/rooms/members?slug=" + encodeURIComponent(slug));
+          var pending = (members || []).filter(function(m){ return m.approved !== 1; });
+          var approved = (members || []).filter(function(m){ return m.approved === 1; });
+          target.innerHTML =
+            (pending.length ?
+              '<div style="margin-bottom:.6rem"><strong>⏳ Pending (' + pending.length + ")</strong>" +
+              pending.map(function(m){
+                return '<div style="display:flex;gap:.5rem;align-items:center;margin:.3rem 0">' +
+                  "<span>" + esc(m.avatar || "🧠") + " " + esc(m.displayName) + "</span>" +
+                  '<button class="btn btn-primary btn-sm" data-approve="' + esc(m.user_id) + '" data-slug="' + esc(slug) + '">Allow</button>' +
+                  '<button class="btn btn-plain btn-sm" data-reject="' + esc(m.user_id) + '" data-slug="' + esc(slug) + '">Decline</button></div>';
+              }).join("") + "</div>"
+            : '<p class="small">No pending requests. 🌿</p>') +
+            (approved.length ? '<div><strong>✅ Members (' + approved.length + ")</strong><br>" +
+              approved.map(function(m){ return '<span class="chip" style="margin:.15rem">' + esc(m.avatar || "🧠") + " " + esc(m.displayName) + "</span>"; }).join("") + "</div>" : "");
+          target.querySelectorAll("[data-approve],[data-reject]").forEach(function(x){
+            x.addEventListener("click", async function(){
+              x.disabled = true;
+              try{
+                await api("/api/chat/rooms/members", {method:"POST", body:{
+                  slug: x.getAttribute("data-slug"),
+                  user_id: x.getAttribute("data-approve") || x.getAttribute("data-reject"),
+                  approved: x.hasAttribute("data-approve") ? 1 : 0
+                }});
+                toast(x.hasAttribute("data-approve") ? "Member approved ✅" : "Request declined.", "ok");
+                b.disabled = false;
+                b.click();
+              }catch(e){ toast(e.message, "err"); x.disabled = false; }
+            });
+          });
+        }catch(e){ toast(e.message, "err"); }
+        b.disabled = false;
+      });
+    });
+  }catch(e){
+    errorBox(box, "Could not load communities: " + e.message);
   }
 }
 
