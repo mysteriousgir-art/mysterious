@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /profile.html
 
-Sitemap: https://idyllic-griffin-f20bcd.netlify.app/sitemap.xml
+Sitemap: https://mysteriousnet.netlify.app/sitemap.xml
