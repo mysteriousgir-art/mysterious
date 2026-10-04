@@ -72,6 +72,26 @@ async function main() {
     ok('asJson string', JSON.stringify(u.asJson('{"a":1}')) === '{"a":1}');
     ok('asJson passthrough', Array.isArray(u.asJson([1, 2])));
     ok('userShape', (() => { const s = u.userShape({ id: 1, email: 'e', display_name: 'D', avatar: 'a', bio: '', country: '', xp: 5, level: 1, streak_count: 2, is_admin: 1 }); return s.displayName === 'D' && s.isAdmin === true && s.streak === 2; })());
+    // social lib logic (fake sb; blockEitherWay hits the real blocks table, which exists)
+    const soc = require('../api/_lib/social');
+    const fakeSb = (isF) => ({
+      from: (t) => {
+        const chain = { maybeSingle: async () => ({ data: null }) };
+        const eq2 = { eq: () => chain };
+        if (t === 'follows') return { select: () => ({ eq: () => ({ eq: () => ({ maybeSingle: async () => ({ data: isF ? { follower_id: 9 } : null }) }) }) }) };
+        if (t === 'users') return { select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { id: 7, display_name: 'Zed', avatar: '🦉' } }) }) }) };
+        return { select: () => eq2 };
+      },
+    });
+    ok('social public post visible anon', await soc.canSeePost(fakeSb(false), { user_id: 7, visibility: 'public' }, null) === true);
+    ok('social followers-only hidden anon', await soc.canSeePost(fakeSb(false), { user_id: 7, visibility: 'followers' }, null) === false);
+    ok('social own post visible', await soc.canSeePost(fakeSb(false), { user_id: 9, visibility: 'followers' }, 9) === true);
+    ok('social follower sees followers-only', await soc.canSeePost(fakeSb(true), { user_id: 7, visibility: 'followers' }, 9) === true);
+    ok('social non-follower hidden', await soc.canSeePost(fakeSb(false), { user_id: 7, visibility: 'followers' }, 9) === false);
+    ok('social reaction kinds', soc.REACTION_KINDS.join(',') === 'like,love,insightful,celebrate');
+    const sp = await soc.serializePost(fakeSb(false),
+      { id: 1, user_id: 7, body: 'hi', image_url: '', visibility: 'public', created_at: '2026-01-01', like_count: 2, comment_count: 0, share_count: 0, shared_post_id: null }, null);
+    ok('social serializePost shape', sp.id === 1 && sp.author.displayName === 'Zed' && sp.likeCount === 2 && sp.myReaction === null && sp.sharedPost === null);
   });
 
   // ---- can we reach the DB schema? ----
@@ -381,6 +401,137 @@ async function dbTests() {
     let dump = null; try { dump = JSON.parse(res.body); } catch (e) {}
     const noHashes = dump && !(JSON.stringify(dump.tables.users).includes('password_hash'));
     ok('admin backup JSON download', res.statusCode === 200 && cd.includes('attachment') && !!dump && noHashes);
+  });
+
+  let socialOk = false;
+  await section('social schema presence', async () => {
+    const { error } = await sb.from('posts').select('id').limit(1);
+    if (error && /does not exist|relation|could not find/i.test(error.message || '')) {
+      console.log('  SKIP social tests: apply supabase/migrate-social.sql in the Supabase SQL Editor first.');
+    } else if (error) {
+      throw error;
+    } else {
+      socialOk = true;
+      ok('social tables present', true);
+    }
+  });
+
+  if (socialOk) await section('social: follows/posts/reactions/comments/shares', async () => {
+    const follows = H('follows.js'), unfollow = H('follows/[userId].js');
+    const posts = H('posts.js'), postDetail = H('posts/[id].js');
+    const react = H('posts/[id]/react.js'), comments = H('posts/[id]/comments.js');
+    const share = H('posts/[id]/share.js'), reports = H('reports.js'), play = H('games/play.js');
+    const bId = global.__bId, cId = global.__cId;
+    let res, d;
+
+    res = mockRes();
+    await follows(mockReq({ method: 'POST', body: { userId: cId }, cookie: cookies.b }), res);
+    ok('B follows C 201', res.statusCode === 201);
+
+    res = mockRes();
+    await follows(mockReq({ method: 'POST', body: { userId: cId }, cookie: cookies.b }), res);
+    ok('follow idempotent 201', res.statusCode === 201);
+
+    res = mockRes();
+    await follows(mockReq({ method: 'POST', body: { userId: bId }, cookie: cookies.b }), res);
+    ok('follow self 400', res.statusCode === 400);
+
+    res = mockRes();
+    await follows(mockReq({ method: 'GET', query: { userId: String(cId), type: 'followers' }, cookie: cookies.b }), res);
+    d = json(res);
+    ok('followers list has B + counts', res.statusCode === 200 && d.followerCount === 1 && d.users.some((x) => x.userId === bId));
+
+    res = mockRes();
+    await follows(mockReq({ method: 'GET', query: {}, cookie: cookies.b }), res);
+    d = json(res);
+    ok('my following list has C', res.statusCode === 200 && d.followingCount === 1 && d.users.some((x) => x.userId === cId));
+
+    res = mockRes();
+    await posts(mockReq({ method: 'POST', body: { body: 'Hello psychology world 🌱', visibility: 'public' }, cookie: cookies.b }), res);
+    d = json(res);
+    ok('create public post 201', res.statusCode === 201 && typeof d.id === 'number');
+    const pubId = d.id;
+
+    res = mockRes();
+    await posts(mockReq({ method: 'POST', body: { body: 'Followers-only thought', visibility: 'followers' }, cookie: cookies.b }), res);
+    d = json(res);
+    ok('create followers-only post 201', res.statusCode === 201);
+    const folId = d.id;
+
+    res = mockRes();
+    await posts(mockReq({ method: 'GET', query: { feed: 'all' }, cookie: cookies.c }), res);
+    d = json(res);
+    const idsC = (d.posts || []).map((p) => p.id);
+    ok('C sees public, not followers-only', res.statusCode === 200 && idsC.includes(pubId) && !idsC.includes(folId));
+
+    res = mockRes();
+    await follows(mockReq({ method: 'POST', body: { userId: bId }, cookie: cookies.c }), res);
+    ok('C follows B 201', res.statusCode === 201);
+
+    res = mockRes();
+    await posts(mockReq({ method: 'GET', query: { feed: 'following' }, cookie: cookies.c }), res);
+    d = json(res);
+    ok('C following feed sees both', res.statusCode === 200 && (d.posts || []).some((p) => p.id === folId));
+
+    res = mockRes();
+    await react(mockReq({ method: 'POST', query: { id: String(pubId) }, body: { kind: 'love' }, cookie: cookies.b }), res);
+    d = json(res);
+    ok('react love 200 count 1', res.statusCode === 200 && d.kind === 'love' && d.likeCount === 1);
+
+    res = mockRes();
+    await react(mockReq({ method: 'POST', query: { id: String(pubId) }, body: { kind: 'nope' }, cookie: cookies.b }), res);
+    ok('bad reaction kind 400', res.statusCode === 400);
+
+    res = mockRes();
+    await postDetail(mockReq({ method: 'GET', query: { id: String(pubId) }, cookie: cookies.b }), res);
+    d = json(res);
+    ok('post shows myReaction', res.statusCode === 200 && d.myReaction === 'love' && d.likeCount === 1);
+
+    res = mockRes();
+    await comments(mockReq({ method: 'POST', query: { id: String(pubId) }, body: { body: 'Great post!' }, cookie: cookies.c }), res);
+    ok('C comments 201', res.statusCode === 201 && typeof json(res).id === 'number');
+
+    res = mockRes();
+    await comments(mockReq({ method: 'GET', query: { id: String(pubId) }, cookie: cookies.b }), res);
+    d = json(res);
+    ok('comment listed + count', res.statusCode === 200 && d.length === 1 && d[0].body === 'Great post!');
+
+    res = mockRes();
+    await share(mockReq({ method: 'POST', query: { id: String(pubId) }, body: {}, cookie: cookies.c }), res);
+    d = json(res);
+    ok('C shares 201 w/ embedded', res.statusCode === 201 && d.sharedPost && d.sharedPost.id === pubId);
+
+    res = mockRes();
+    await postDetail(mockReq({ method: 'GET', query: { id: String(pubId) }, cookie: cookies.b }), res);
+    ok('share_count incremented', res.statusCode === 200 && json(res).shareCount === 1);
+
+    res = mockRes();
+    await reports(mockReq({ method: 'POST', body: { postId: pubId, reason: 'test post report' }, cookie: cookies.c }), res);
+    ok('report post 201', res.statusCode === 201 && typeof json(res).id === 'number');
+
+    res = mockRes();
+    await unfollow(mockReq({ method: 'DELETE', query: { userId: String(cId) }, cookie: cookies.b }), res);
+    ok('B unfollows C 200', res.statusCode === 200);
+
+    res = mockRes();
+    await postDetail(mockReq({ method: 'DELETE', query: { id: String(pubId) }, cookie: cookies.b }), res);
+    ok('owner deletes post 200', res.statusCode === 200);
+
+    res = mockRes();
+    await postDetail(mockReq({ method: 'GET', query: { id: String(pubId) }, cookie: cookies.b }), res);
+    ok('deleted post 404', res.statusCode === 404);
+
+    res = mockRes();
+    await play(mockReq({ method: 'POST', body: { game: 'category', score: 80 }, cookie: cookies.b }), res);
+    ok('category game play 200', res.statusCode === 200 && typeof json(res).xp === 'number');
+
+    res = mockRes();
+    await play(mockReq({ method: 'POST', body: { game: 'nope', score: 80 }, cookie: cookies.b }), res);
+    ok('unknown game 400', res.statusCode === 400);
+
+    // social cleanup (users are removed in the global cleanup; cascades handle the rest)
+    await sb.from('posts').delete().in('user_id', createdIds);
+    await sb.from('follows').delete().or(`follower_id.in.(${createdIds.join(',')}),followed_id.in.(${createdIds.join(',')})`);
   });
 
   await section('cleanup test data', async () => {

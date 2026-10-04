@@ -94,7 +94,8 @@ var NAV_LINKS = [
   ["games.html","Games"],
   ["videos.html","Videos"],
   ["infographics.html","Infographics"],
-  ["community.html","Community"]
+  ["community.html","Community"],
+  ["feed.html","Feed"]
 ];
 
 function pageOf(path){

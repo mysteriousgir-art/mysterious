@@ -9,7 +9,7 @@ module.exports = async function handler(req, res) {
     const body = req.body || {};
     const game = String(body.game || '');
     const score = Number(body.score);
-    if (!['memory', 'theorist'].includes(game)) return u.send(res, 400, { error: 'unknown game' });
+    if (!['memory', 'theorist', 'category'].includes(game)) return u.send(res, 400, { error: 'unknown game' });
     if (!Number.isInteger(score) || score < 0 || score > 100) {
       return u.send(res, 400, { error: 'score must be an integer 0..100' });
     }

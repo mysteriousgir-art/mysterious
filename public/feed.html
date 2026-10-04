@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feed — Mysterious</title>
+<meta name="description" content="Share psychology thoughts, follow learners, react and discuss on the Mysterious community feed.">
+<link rel="canonical" href="https://mysteriouslearning.netlify.app/feed.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mysterious">
+<meta property="og:title" content="Feed — Mysterious">
+<meta property="og:description" content="Share psychology thoughts, follow learners, react and discuss on the Mysterious community feed.">
+<meta property="og:url" content="https://mysteriouslearning.netlify.app/feed.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Feed — Mysterious">
+<meta name="twitter:description" content="Share psychology thoughts, follow learners, react and discuss on the Mysterious community feed.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<header id="zehen-nav"></header>
+
+<main>
+  <section class="section">
+    <div class="wrap" style="max-width:44rem">
+      <h1>📰 Feed</h1>
+      <p class="lead">Share thoughts, follow learners, and discuss psychology.</p>
+
+      <div class="card" id="composer" style="margin-top:1.4rem">
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <div class="avatar-big" id="composer-avatar" style="font-size:2rem;width:3rem;height:3rem">🧠</div>
+          <div style="flex:1">
+            <textarea class="input" id="post-body" rows="3" maxlength="500" placeholder="Share a psychology thought… (max 500 characters)"></textarea>
+            <div id="post-preview" style="margin-top:.5rem"></div>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:.6rem">
+              <label class="btn btn-plain btn-sm" style="cursor:pointer">📷 Add photo
+                <input type="file" id="post-image" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+              </label>
+              <select class="input" id="post-visibility" style="width:auto">
+                <option value="public">🌍 Public</option>
+                <option value="followers">👥 Followers only</option>
+              </select>
+              <button class="btn btn-primary btn-sm" id="post-submit">Post</button>
+            </div>
+            <div id="post-msg" style="margin-top:.5rem"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-tabs" style="margin-top:1.4rem">
+        <button class="chip-btn active" data-feed="following">👥 Following</button>
+        <button class="chip-btn" data-feed="all">🌍 Everyone</button>
+        <button class="chip-btn" data-feed="mine">🙋 My posts</button>
+      </div>
+
+      <div id="feed-box" style="margin-top:1rem"></div>
+      <div style="text-align:center;margin:1.2rem 0">
+        <button class="btn btn-plain" id="feed-more" style="display:none">Load more</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="zehen-footer"></footer>
+<script src="js/nav.js"></script>
+<script src="js/feed.js"></script>
+</body>
+</html>

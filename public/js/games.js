@@ -7,11 +7,12 @@ function switchTab(name){
   document.querySelectorAll(".game-tabs .chip-btn").forEach(function(b){
     b.classList.toggle("active", b.getAttribute("data-tab") === name);
   });
-  ["memory","theorist","board"].forEach(function(t){
+  ["memory","theorist","category","board"].forEach(function(t){
     document.getElementById("tab-" + t).style.display = t === name ? "" : "none";
   });
   if(name === "board") loadBoard();
   if(name === "theorist" && !theoristStarted) startTheorist();
+  if(name === "category" && window.catStartGame && !window.catGameStarted()) window.catStartGame();
 }
 document.addEventListener("DOMContentLoaded", function(){
   document.querySelectorAll(".game-tabs .chip-btn").forEach(function(b){

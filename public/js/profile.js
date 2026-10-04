@@ -32,17 +32,24 @@ function render(){
   if(targetId){
     // ---- public read-only view ----
     document.title = profile.displayName + " — Mysterious";
+    var isMe = window.zehenUser && String(window.zehenUser.id) === String(targetId);
     box.innerHTML =
       '<div class="profile-top"><div class="avatar-big">' + esc(profile.avatar || "🧠") + "</div>" +
       "<div><h2 style='margin-bottom:.2rem'>" + esc(profile.displayName) + "</h2>" +
       (profile.isAdmin ? '<span class="chip terra">👑 Founder &amp; Admin</span> ' : "") +
       '<p class="small" style="margin:0">' + esc(profile.bio || "Psychology learner on Mysterious 🌿") + "</p></div></div>" +
       statRow() +
-      (window.zehenUser && String(window.zehenUser.id) !== String(targetId)
-        ? '<a class="btn btn-primary" href="community.html?dm=' + encodeURIComponent(targetId) + '">💌 Message</a>'
+      '<p class="small" id="follow-stats" style="margin:.4rem 0"><span class="chip">👥 <span id="follower-count">…</span> followers</span> ' +
+      '<span class="chip">➡️ <span id="following-count">…</span> following</span></p>' +
+      '<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem">' +
+      (window.zehenUser && !isMe
+        ? '<button class="btn btn-primary btn-sm" id="follow-btn">Follow</button>' +
+          '<a class="btn btn-plain btn-sm" href="community.html?dm=' + encodeURIComponent(targetId) + '">💌 Message</a>'
         : "") +
-      (window.zehenUser && String(window.zehenUser.id) === String(targetId)
-        ? '<p class="small" style="margin-top:1rem">This is you! <a href="profile.html">Edit your profile →</a></p>' : "");
+      "</div>" +
+      '<div id="follow-list" style="margin-top:.8rem"></div>' +
+      (isMe ? '<p class="small" style="margin-top:1rem">This is you! <a href="profile.html">Edit your profile →</a></p>' : "");
+    loadFollowInfo();
     return;
   }
   // ---- own profile ----
@@ -117,6 +124,62 @@ async function save(){
     btn.disabled = false; btn.innerHTML = "💾 Save changes";
   }
 }
+
+/* ---- follow info on public profiles ---- */
+var followState = { isFollowing: false, loaded: false };
+
+async function loadFollowInfo(){
+  try{
+    var d = await api("/api/follows?userId=" + encodeURIComponent(targetId) + "&type=followers");
+    document.getElementById("follower-count").textContent = d.followerCount;
+    document.getElementById("following-count").textContent = d.followingCount;
+    followState.isFollowing = !!d.isFollowing;
+    followState.loaded = true;
+    paintFollowBtn();
+    renderFollowList(d.users || []);
+  }catch(e){ /* counts stay as … */ }
+}
+
+function paintFollowBtn(){
+  var b = document.getElementById("follow-btn");
+  if(!b || !followState.loaded) return;
+  b.textContent = followState.isFollowing ? "✓ Following" : "＋ Follow";
+  b.className = followState.isFollowing ? "btn btn-plain btn-sm" : "btn btn-primary btn-sm";
+}
+
+function renderFollowList(users){
+  var box = document.getElementById("follow-list");
+  if(!box || !users.length) return;
+  box.innerHTML = '<p class="small" style="margin-bottom:.4rem"><strong>Followers</strong></p>' +
+    '<div style="display:flex;gap:.4rem;flex-wrap:wrap">' +
+    users.slice(0, 12).map(function(x){
+      return '<a class="chip" href="profile.html?id=' + x.userId + '">' + esc(x.avatar) + " " + esc(x.displayName) + "</a>";
+    }).join("") + "</div>";
+}
+
+async function toggleFollow(){
+  var b = document.getElementById("follow-btn");
+  b.disabled = true;
+  try{
+    if(followState.isFollowing){
+      await api("/api/follows/" + encodeURIComponent(targetId), { method: "DELETE" });
+      followState.isFollowing = false;
+    }else{
+      await api("/api/follows", { method: "POST", body: { userId: Number(targetId) } });
+      followState.isFollowing = true;
+      toast("Following " + (profile.displayName || "them") + "! 🎉", "ok");
+    }
+    paintFollowBtn();
+    loadFollowInfo();
+  }catch(e){
+    toast(e.message, "err");
+  }
+  b.disabled = false;
+}
+
+document.addEventListener("click", function(e){
+  if(e.target && e.target.id === "follow-btn") toggleFollow();
+});
 
 async function boot(){
   var box = document.getElementById("profile-box");

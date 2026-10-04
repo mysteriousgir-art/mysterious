@@ -1,13 +1,13 @@
 // netlify/functions-src/api.js — SOURCE for the ONE catch-all Netlify Function.
 //
-// Build: `npm run build:netlify` bundles this file (plus the 37 handlers in
+// Build: `npm run build:netlify` bundles this file (plus the 44 handlers in
 // ../../api/ and node_modules) into netlify/functions/api.js with esbuild.
 // Netlify then deploys that single self-contained file, so its bundler has
 // nothing to trace across directories (cross-directory requires broke the
 // production bundle -> 502).
 //
 // It adapts Netlify Function events to the existing Vercel-style handlers in
-// ../../api/ (module.exports = async function handler(req, res)), so the 37
+// ../../api/ (module.exports = async function handler(req, res)), so the 44
 // handlers are reused unchanged.
 //
 // IMPORTANT: all handler requires below are STATIC strings so esbuild can
@@ -42,6 +42,8 @@ const HANDLERS = {
   'chat/rooms': require('../../api/chat/rooms.js'),
   'chat/send': require('../../api/chat/send.js'),
   'checkin': require('../../api/checkin.js'),
+  'follows': require('../../api/follows.js'),
+  'follows/:userId': require('../../api/follows/[userId].js'),
   'games/play': require('../../api/games/play.js'),
   'health': require('../../api/health.js'),
   'infographics': require('../../api/infographics.js'),
@@ -50,6 +52,11 @@ const HANDLERS = {
   'notes': require('../../api/notes/index.js'),
   'notes/:slug': require('../../api/notes/[slug].js'),
   'notes/:slug/read': require('../../api/notes/[slug]/read.js'),
+  'posts': require('../../api/posts.js'),
+  'posts/:id': require('../../api/posts/[id].js'),
+  'posts/:id/comments': require('../../api/posts/[id]/comments.js'),
+  'posts/:id/react': require('../../api/posts/[id]/react.js'),
+  'posts/:id/share': require('../../api/posts/[id]/share.js'),
   'profile': require('../../api/profile.js'),
   'quizzes': require('../../api/quizzes/index.js'),
   'quizzes/:slug': require('../../api/quizzes/[slug].js'),
@@ -85,6 +92,8 @@ const FILES = {
   'chat/rooms': 'api/chat/rooms.js',
   'chat/send': 'api/chat/send.js',
   'checkin': 'api/checkin.js',
+  'follows': 'api/follows.js',
+  'follows/:userId': 'api/follows/[userId].js',
   'games/play': 'api/games/play.js',
   'health': 'api/health.js',
   'infographics': 'api/infographics.js',
@@ -93,6 +102,11 @@ const FILES = {
   'notes': 'api/notes/index.js',
   'notes/:slug': 'api/notes/[slug].js',
   'notes/:slug/read': 'api/notes/[slug]/read.js',
+  'posts': 'api/posts.js',
+  'posts/:id': 'api/posts/[id].js',
+  'posts/:id/comments': 'api/posts/[id]/comments.js',
+  'posts/:id/react': 'api/posts/[id]/react.js',
+  'posts/:id/share': 'api/posts/[id]/share.js',
   'profile': 'api/profile.js',
   'quizzes': 'api/quizzes/index.js',
   'quizzes/:slug': 'api/quizzes/[slug].js',
