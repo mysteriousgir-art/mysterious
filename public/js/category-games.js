@@ -284,7 +284,7 @@ var CATG = {
       options: ["High in extraversion", "High in neuroticism", "Low in openness", "High in psychoticism"], answer: 0,
       explain: "Energy from social contact = extraversion." },
     { q: "In the Big Five, OCEAN stands for…",
-      options: ["Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism", "Optimism, Courage, Energy, Action, Nerve", "Order, Control, Ego, Anxiety, Need", "Oral, Creative, Emotional, Active, Nice"], answer: 0,
+      options: ["Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism", "Optimism, Courage, Energy, Action, Nerve", "Outgoing, Calm, Energetic, Artistic, Nice", "Oral, Creative, Emotional, Active, Kind"], answer: 0,
       explain: "OCEAN = the five broad traits psychologists measure." },
     { q: "A Rorschach inkblot test is an example of…",
       options: ["A projective test", "An IQ test", "A blood test", "A lie detector"], answer: 0,
