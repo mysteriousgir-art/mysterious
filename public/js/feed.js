@@ -201,7 +201,7 @@ async function sendReport(postId){
   }catch(e){ toast(e.message, "err"); }
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+function bootFeed(){
   if(!window.zehenUser){
     document.getElementById("feed-box").innerHTML =
       '<div class="card"><p>Please <a href="auth.html?next=feed.html">log in</a> to see the feed and share posts. 🌱</p></div>';
@@ -260,5 +260,9 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   loadFeed(true);
+}
+document.addEventListener("DOMContentLoaded", function(){
+  if(window.zehenUserLoaded){ bootFeed(); }
+  else{ document.addEventListener("zehen:user", bootFeed, {once:true}); }
 });
 })();
