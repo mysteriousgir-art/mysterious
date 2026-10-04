@@ -162,7 +162,7 @@ function renderFooter(){
           '<a href="notes.html">Notes library</a><br><a href="quizzes.html">Quizzes</a><br><a href="games.html">Games &amp; leaderboard</a><br><a href="videos.html">3D videos</a><br><a href="infographics.html">Infographics</a></div>' +
         '<div><strong style="color:#fff">Community</strong><br>' +
           '<a href="community.html">Study rooms</a><br><a href="profile.html">Your profile</a><br><a href="auth.html">Join Mysterious</a></div>' +
-        '<div><strong style="color:#fff">Follow</strong>' +
+        '<div>' +
           '<style>.socbtn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;margin:.6rem .45rem 0 0;transition:transform .2s,box-shadow .2s}.socbtn:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 6px 16px rgba(0,0,0,.4)}.socbtn svg{width:20px;height:20px}</style>' +
           '<div>' +
             '<a class="socbtn" style="background:#0A66C2" title="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/attiya-batool-14119338a/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>' +
