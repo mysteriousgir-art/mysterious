@@ -162,6 +162,8 @@ function renderFooter(){
           '<a href="notes.html">Notes library</a><br><a href="quizzes.html">Quizzes</a><br><a href="games.html">Games &amp; leaderboard</a><br><a href="videos.html">3D videos</a><br><a href="infographics.html">Infographics</a></div>' +
         '<div><strong style="color:#fff">Community</strong><br>' +
           '<a href="community.html">Study rooms</a><br><a href="profile.html">Your profile</a><br><a href="auth.html">Join Mysterious</a></div>' +
+        '<div><strong style="color:#fff">Follow</strong><br>' +
+          '<a href="https://www.linkedin.com/in/attiya-batool-14119338a/" target="_blank" rel="noopener">LinkedIn</a><br><a href="https://www.tiktok.com/@mysterious.girl.609" target="_blank" rel="noopener">TikTok</a><br><a href="https://www.instagram.com/mysterious.girl.609" target="_blank" rel="noopener">Instagram</a></div>' +
       "</div>" +
       '<div class="fine">© 2026 Mysterious — learn the mind, one day at a time.</div>' +
     "</div>";
