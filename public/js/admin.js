@@ -14,7 +14,7 @@ function showTab(name){
   document.querySelectorAll("[data-atab]").forEach(function(b){
     b.classList.toggle("active", b.getAttribute("data-atab") === name);
   });
-  ["dash","users","notes","quizzes","communities","reports"].forEach(function(t){
+  ["dash","users","notes","quizzes","communities","reports","visitors"].forEach(function(t){
     document.getElementById("atab-" + t).style.display = t === name ? "" : "none";
   });
   if(name === "dash") loadDash();
@@ -23,6 +23,7 @@ function showTab(name){
   if(name === "quizzes") loadQuizzes();
   if(name === "communities") loadCommunities();
   if(name === "reports") loadReports();
+  if(name === "visitors") loadVisitors();
 }
 
 function gate(){
@@ -484,6 +485,59 @@ async function loadReports(){
     });
   }catch(e){
     errorBox(box, "Could not load reports: " + e.message);
+  }
+}
+
+/* ================= VISITORS ================= */
+async function loadVisitors(){
+  var box = document.getElementById("atab-visitors");
+  loadingBox(box, "Loading visitors…");
+  try{
+    var v = await api("/api/admin/visits");
+    var visitsToday = pick(v, "visitsToday") || 0;
+    var pageViewsToday = pick(v, "pageViewsToday") || 0;
+    var recent = pick(v, "recent") || [];
+    var topPages = pick(v, "topPages") || [];
+    var byCountry = pick(v, "byCountry") || [];
+
+    function fmtTime(iso){
+      if(!iso) return "—";
+      var d = new Date(iso);
+      return isNaN(d) ? "—" : d.toLocaleString();
+    }
+    function shortPage(p){
+      p = String(p || "/");
+      return p.length > 34 ? p.slice(0, 34) + "…" : p;
+    }
+
+    box.innerHTML =
+      '<div class="stat-grid">' +
+        statCard(visitsToday, "Visitors today") +
+        statCard(pageViewsToday, "Page views today") +
+        statCard(recent.length, "Recent sessions shown") +
+      "</div>" +
+      '<div class="grid grid-2">' +
+        '<div class="card"><h3>📄 Top pages · 7 days</h3>' +
+          listOrEmpty(topPages.map(function(x){ return "<code>" + esc(shortPage(pick(x,"page"))) + "</code> — <strong>" + esc(pick(x,"count") || 0) + "</strong>"; })) + "</div>" +
+        '<div class="card"><h3>🌍 By location · 7 days</h3>' +
+          listOrEmpty(byCountry.map(function(x){ return esc(pick(x,"country") || "?") + " — <strong>" + esc(pick(x,"count") || 0) + "</strong>"; })) + "</div>" +
+      "</div>" +
+      '<div class="card" style="margin-top:1.4rem;padding:0;overflow-x:auto"><table class="atable"><thead><tr>' +
+      "<th>Visitor</th><th>First seen</th><th>Last seen</th><th>Pages</th><th>Entry page</th><th>Last page</th><th>Location</th><th>Device</th></tr></thead><tbody>" +
+      (recent.length ? recent.map(function(r){
+        return "<tr>" +
+          "<td><strong>" + esc(r.visitor || "Guest") + "</strong></td>" +
+          "<td>" + esc(fmtTime(r.firstSeen)) + "</td>" +
+          "<td>" + esc(fmtTime(r.lastSeen)) + "</td>" +
+          "<td>" + esc(r.pageViews || 0) + "</td>" +
+          "<td><code>" + esc(shortPage(r.entryPage)) + "</code></td>" +
+          "<td><code>" + esc(shortPage(r.lastPage)) + "</code></td>" +
+          "<td>" + esc(r.country || "—") + "</td>" +
+          "<td>" + esc(r.device || "—") + "</td></tr>";
+      }).join("") : '<tr><td colspan="8">No visits recorded yet. Visits appear here after the update is deployed.</td></tr>') +
+      "</tbody></table></div>";
+  }catch(e){
+    errorBox(box, "Could not load visitors: " + e.message);
   }
 }
 

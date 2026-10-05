@@ -202,3 +202,21 @@ document.addEventListener("DOMContentLoaded", function(){
   loadUser();
 });
 })();
+
+/* ---------- anonymous visit tracking (one beacon per page view) ---------- */
+(function(){
+  "use strict";
+  try{
+    if(/\/admin\.html$/.test(window.location.pathname)) return; // keep admin data clean
+    var tz = "";
+    try{ tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; }catch(e){}
+    var ua = navigator.userAgent || "";
+    var device = /Mobi|Android|iPhone|iPad|Mobile/i.test(ua) ? "mobile" : "desktop";
+    var payload = JSON.stringify({ page: window.location.pathname || "/", timezone: tz, device: device });
+    if(navigator.sendBeacon){
+      navigator.sendBeacon("/api/track", new Blob([payload], {type:"application/json"}));
+    }else if(window.fetch){
+      fetch("/api/track", {method:"POST", headers:{"Content-Type":"application/json"}, body:payload, keepalive:true}).catch(function(){});
+    }
+  }catch(e){/* tracking must never break the page */}
+})();

@@ -30,6 +30,7 @@ const HANDLERS = {
   'admin/users': require('../../api/admin/users.js'),
   'admin/users/:id/ban': require('../../api/admin/users/[id]/ban.js'),
   'admin/users/:id/unban': require('../../api/admin/users/[id]/unban.js'),
+  'admin/visits': require('../../api/admin/visits.js'),
   'auth/login': require('../../api/auth/login.js'),
   'auth/logout': require('../../api/auth/logout.js'),
   'auth/me': require('../../api/auth/me.js'),
@@ -62,6 +63,7 @@ const HANDLERS = {
   'quizzes/:slug': require('../../api/quizzes/[slug].js'),
   'quizzes/:slug/submit': require('../../api/quizzes/[slug]/submit.js'),
   'reports': require('../../api/reports.js'),
+  'track': require('../../api/track.js'),
   'users/:id/public': require('../../api/users/[id]/public.js'),
 };
 
@@ -80,6 +82,7 @@ const FILES = {
   'admin/users': 'api/admin/users.js',
   'admin/users/:id/ban': 'api/admin/users/[id]/ban.js',
   'admin/users/:id/unban': 'api/admin/users/[id]/unban.js',
+  'admin/visits': 'api/admin/visits.js',
   'auth/login': 'api/auth/login.js',
   'auth/logout': 'api/auth/logout.js',
   'auth/me': 'api/auth/me.js',
@@ -112,6 +115,7 @@ const FILES = {
   'quizzes/:slug': 'api/quizzes/[slug].js',
   'quizzes/:slug/submit': 'api/quizzes/[slug]/submit.js',
   'reports': 'api/reports.js',
+  'track': 'api/track.js',
   'users/:id/public': 'api/users/[id]/public.js',
 };
 const dynCount = (segs) => segs.filter((s) => s[0] === ':').length;
