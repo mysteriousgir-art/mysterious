@@ -23,4 +23,8 @@ CREATE TABLE IF NOT EXISTS visits(
 CREATE INDEX IF NOT EXISTS visits_last_seen_idx ON visits(last_seen_at DESC);
 CREATE INDEX IF NOT EXISTS visits_created_idx ON visits(created_at DESC);
 
+-- Lock down direct access: server uses the service key (bypasses RLS),
+-- the public anon key can read nothing.
+ALTER TABLE visits ENABLE ROW LEVEL SECURITY;
+
 -- Verify: SELECT count(*) FROM visits;
