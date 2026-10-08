@@ -22,7 +22,7 @@ async function boot(){
     document.title = n.title + " — Mysterious";
     body.innerHTML =
       '<span class="chip">' + esc(n.category) + '</span> ' +
-      '<span class="meta">👁 ' + esc(n.readCount || 0) + ' reads</span>' +
+      '<span class="meta">' + esc(n.readCount || 0) + ' reads</span>' +
       "<h1 style='margin:.5rem 0 .8rem'>" + esc(n.title) + "</h1>" +
       '<p class="lead">' + esc(n.summary || "") + "</p>" +
       '<div id="points">' + (n.points || []).map(pointHtml).join("") + "</div>" +

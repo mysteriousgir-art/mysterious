@@ -7,7 +7,7 @@ function noteCard(n){
     '<span class="chip">' + esc(n.category) + "</span>" +
     "<h3>" + esc(n.title) + "</h3>" +
     '<p class="small">' + esc(n.summary || "") + "</p>" +
-    '<span class="meta">👁 ' + esc(n.readCount || 0) + ' reads →</span>' +
+    '<span class="meta">' + esc(n.readCount || 0) + ' reads →</span>' +
   "</a>";
 }
 
